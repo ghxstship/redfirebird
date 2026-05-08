@@ -59,9 +59,10 @@ export default function ServicesHub() {
             every line
           </div>
           <p className="mt-6 max-w-2xl text-lg text-[var(--text-secondary)]">
-            Each service is a real, scoped, priceable line of work — not a marketing buzzword. Browse by discipline
-            below, or jump straight to the industry vertical you&apos;re in. Every service detail page tells you what it
-            is, when in the project you need it, what you receive, and where it operates.
+            Every line below is a real, scoped, priceable unit of work — not a buzzword cluster from a deck. The
+            full catalog is the XPMS taxonomy, indexed by class code and addressable down to the L6 atom. Browse by
+            discipline, or skip ahead to your industry. Every detail page tells you what the service is, when in
+            the project you need it, what you receive when it lands, and where it operates. No marketing layer.
           </p>
         </section>
 
@@ -111,19 +112,21 @@ export default function ServicesHub() {
             <div className="grid gap-8 md:grid-cols-2 md:items-end">
               <div>
                 <h2 className="text-3xl uppercase sm:text-4xl" style={{ fontFamily: "var(--font-display)" }}>
-                  Don&apos;t know what to call it?
+                  Can&apos;t find the right word?
                 </h2>
                 <p className="mt-3 max-w-xl text-[var(--text-secondary)]">
-                  Brief us in plain English. We&apos;ll resolve it against the catalog, reply with a scope, a
-                  recommended engagement model, and the producer who&apos;ll own it.
+                  Brief us in plain English — or in the deepest operator vernacular you&apos;ve got. We resolve it
+                  against the XPMS catalog and come back inside one business day with the atom set, the engagement
+                  model, and the producer who&apos;ll own it. The catalog is comprehensive but it isn&apos;t a
+                  prison; if your work doesn&apos;t fit, we&apos;ll add the row.
                 </p>
               </div>
               <div className="flex flex-wrap items-center gap-3">
                 <Button href={paths.contact()} size="lg">
-                  Start a Project
+                  Hail The Studio
                 </Button>
                 <Button href={paths.solutionsRoot()} size="lg" variant="secondary">
-                  Browse by industry
+                  Browse By Industry
                 </Button>
               </div>
             </div>

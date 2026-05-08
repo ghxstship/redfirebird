@@ -237,10 +237,10 @@ export default async function ServiceDetail({ params }: { params: Promise<{ clas
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <Button href={paths.contact()} size="lg">
-                Start a Project
+                Hail The Studio
               </Button>
               <Button href={paths.pricing()} size="lg" variant="secondary">
-                See pricing
+                Read The Articles
               </Button>
             </div>
           </div>

@@ -38,17 +38,21 @@ export default function MarketsHub() {
       <div className="space-y-16 pb-24">
         <section className="mx-auto max-w-6xl px-6 pt-16">
           <div className="text-xs font-semibold tracking-[0.25em] uppercase" style={{ color: "var(--org-primary)" }}>
-            Markets
+            Where The Ghost Ship Makes Port
           </div>
           <h1 className="mt-4 text-5xl uppercase sm:text-7xl" style={{ fontFamily: "var(--font-display)" }}>
             Four anchors.
             <br />
             Eight satellites.
+            <br />
+            One flag.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-[var(--text-secondary)]">
-            Anchor markets get full local presence, dedicated team, and fabrication capacity. Satellites are serviced
-            from anchors with deep venue and permit familiarity. National and international productions are handled from
-            the closest anchor.
+            Anchor ports — Miami, New York, Chicago, Los Angeles — carry full local crews, dedicated fabrication,
+            permanent vendor relationships, and the kind of permit-window memory that comes from running shows
+            there for years. Satellites get sailed to under the same flag, vetted fixers in place, deep venue
+            familiarity. National and international productions launch from the closest anchor. Wherever the work
+            lives, we make port.
           </p>
         </section>
 

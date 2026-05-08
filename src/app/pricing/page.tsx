@@ -10,39 +10,45 @@ import { WorkbackTable } from "@/components/ghxstship/WorkbackTable";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "Pricing — Per Project & Retainer | GHXSTSHIP",
+  title: "Pricing — Articles Of Engagement | GHXSTSHIP",
   description:
-    "Per-project tiers from $25K through federation-grade. Monthly retainers from $3K (Coordinator pair) through $13K (full senior team with 24/7 support). Stackable add-ons for engineering, federation liaison, AR/VR, sustainability, and more.",
+    "Per-Project tiers from $25K through federation-grade. Monthly retainers from $3K through $13K, built around team composition. Stackable add-ons for stamped engineering, federation liaison, AR/VR, ESG. Sixty on signature, forty at load-in. Production pass-through at cost.",
   keywords: [
     "production company pricing",
     "event production retainer",
     "festival production cost",
     "experiential production rates",
     "event agency retainer pricing",
+    "Olympic production cost",
+    "F1 paddock club production",
   ],
   alternates: { canonical: "https://ghxstship.pro/pricing" },
 };
 
 const FAQS = [
   {
-    q: "What's actually included in the price on the card?",
-    a: "The fee on the card is GHXSTSHIP's professional services fee — what we charge to scope, plan, manage, and deliver the engagement. Production costs (gear rental, labor, travel, fabrication, F&B, freight) pass through at cost plus an agreed administration rate, typically 12 to 18 percent.",
+    q: "What's actually in the number on the card?",
+    a: "The professional services fee — what GHXSTSHIP charges to scope, plan, manage, and run the engagement. Production costs (gear, labor, travel, fabrication, F&B, freight) pass through at cost plus an agreed admin rate, typically 12 to 18 percent. The numbers are clean. Open the books any time.",
   },
   {
-    q: "Can I move from a per-project engagement onto a retainer later?",
-    a: "Yes. Many clients start with a single per-project engagement and convert to a retainer once a second or third event lands on the calendar. We credit any unused project balance against the first month of the retainer.",
+    q: "Can I start Per-Project and move onto Retainer later?",
+    a: "Often the right move. Many clients start with one project, decide they like the way we work, and convert to a retainer when a second or third event lands. We credit any unused project balance against the first month of the retainer. We don't punish you for liking us.",
   },
   {
-    q: "How does payment work on per-project tiers?",
-    a: "Sixty percent of the GHXSTSHIP fee on signature, forty percent at load-in. Production pass-throughs are invoiced as they accrue, with full receipts. Retainers bill monthly in advance.",
+    q: "How do payments work on Per-Project?",
+    a: "Sixty percent of the professional fee on signature, forty percent at load-in. Production pass-throughs invoice as they accrue, with full receipts attached. Retainers bill monthly in advance, cancellable on sixty days' notice. No tricks, no surprise auto-renewals.",
   },
   {
-    q: "What's the difference between Studio and Bureau?",
-    a: "Studio gives you a senior producer leading the engagement and an on-site representative every show day. Bureau adds a 24/7 off-site lead — the person who picks up the phone at 3am when weather pivots, a vendor disappears, or a federation issues a clean-zone update mid-build.",
+    q: "What's the real difference between Studio and Bureau?",
+    a: "Studio gives you a senior producer running the engagement and an on-site rep every show day. Bureau adds a 24/7 off-site lead — the person who picks up the phone at 3am when weather pivots, a vendor disappears, or a federation issues a clean-zone update mid-build. Bureau is what you buy when calling the wrong friend at 2am isn't an option.",
   },
   {
-    q: "Are add-ons priced separately from the tier?",
-    a: "Yes. Add-ons are line-itemed at SOW or change-order. Most engagements end up pulling two to three. Stamped engineering and federation liaison are the most-requested across all tiers.",
+    q: "Are add-ons priced separately?",
+    a: "Yes. Add-ons line-item at SOW or change-order. Most engagements pull two or three. Stamped engineering and federation liaison are the most-requested across every tier — those are the things that turn a confident proposal into a signed contract.",
+  },
+  {
+    q: "What's the longest engagement you've taken on?",
+    a: "A multi-year mega-event spine still in flight at this writing. Not the kind of thing we say more about in public. Ask us under NDA.",
   },
 ];
 
@@ -66,16 +72,16 @@ export default function PricingPage() {
             Pricing
           </div>
           <h1 className="mt-4 text-5xl uppercase sm:text-7xl" style={{ fontFamily: "var(--font-display)" }}>
-            Two ways
+            Two contracts.
             <br />
-            to work with us.
+            One ship.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-[var(--text-secondary)]">
-            <strong className="text-[var(--text-primary)]">Per Project</strong> for a single brief. Five tiers scaled to
-            scope, from a one-night activation to a multi-year mega-event.{" "}
-            <strong className="text-[var(--text-primary)]">Retainer</strong> for ongoing programs. Four bundles built
-            around team composition, from a coordinator pair to a senior team with 24/7 support. Add-ons stack on either
-            path. Production costs pass through at cost.
+            <strong className="text-[var(--text-primary)]">Per-Project</strong> for a single brief — five tiers,
+            one-night activation up to mega-event. <strong className="text-[var(--text-primary)]">Retainer</strong>{" "}
+            for ongoing programs — four team-composition bundles, from a coordinator pair through a senior crew
+            with 24/7 support. Add-ons stack either way. Sixty on signature, forty on load-in. Production
+            pass-through at cost. The numbers are clean and the captain answers the email.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Link href="#sample" className="btn btn-secondary btn-sm">
@@ -101,15 +107,15 @@ export default function PricingPage() {
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
               <div className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: "var(--org-primary)" }}>
-                Sample Engagement
+                The Bar Above Every Proposal.
               </div>
               <h2 className="mt-3 text-4xl uppercase sm:text-5xl" style={{ fontFamily: "var(--font-display)" }}>
-                The bar above every proposal.
+                Total. Deposit. Balance. Window.
               </h2>
             </div>
             <p className="max-w-xl text-sm text-[var(--text-secondary)]">
-              Real engagements bind real numbers — a Run-tier sample below. Same five-cell anatomy lands at the top
-              of every signed scope of work, so the shape we send is the shape we showed.
+              A Run-tier sample below. Real engagements bind real numbers, but the five-cell anatomy is the same on
+              every signed scope of work. The shape you see here is the shape we send. No surprises in the closer.
             </p>
           </div>
           <div className="mt-8">
@@ -122,17 +128,20 @@ export default function PricingPage() {
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
               <div className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: "var(--org-primary)" }}>
-                Per Project
+                Per-Project. One Brief. One Show.
               </div>
               <h2 className="mt-3 text-4xl uppercase sm:text-5xl" style={{ fontFamily: "var(--font-display)" }}>
-                Five tiers.
+                The Pop. The Run.
                 <br />
-                One brief.
+                The Mainstage. The Marquee.
+                <br />
+                The Federation.
               </h2>
             </div>
             <p className="max-w-xl text-sm text-[var(--text-secondary)]">
-              Tiers scale to scope. The Pop is a single zone. The Federation is a multi-year mega-event with full senior
-              team. Pick by the work in front of you, not the aspiration.
+              Tiers scale to scope, not aspiration. The Pop is a one-night activation in a single zone. The
+              Federation is a multi-year mega-event spine with embedded senior crew and full XPMS deployment. Pick
+              by the work in front of you. The names are real, and they get used.
             </p>
           </div>
 
@@ -194,18 +203,18 @@ export default function PricingPage() {
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
               <div className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: "var(--org-primary)" }}>
-                Retainer
+                Retainer. Continuous Crew. Continuous Show.
               </div>
               <h2 className="mt-3 text-4xl uppercase sm:text-5xl" style={{ fontFamily: "var(--font-display)" }}>
-                Bundled by
+                Coordinator. Crew.
                 <br />
-                team composition.
+                Studio. Bureau.
               </h2>
             </div>
             <p className="max-w-xl text-sm text-[var(--text-secondary)]">
-              Each tier adds a senior role and a layer of always-on support. Ramp up between tiers as your program
-              grows. Drop down between tiers in your slow season. Billed monthly in advance, cancellable on 60-day
-              notice.
+              Each tier adds a senior role and a new layer of always-on support. Ramp up as the program grows; ramp
+              down in the slow season. Billed monthly in advance, cancellable on sixty days&apos; notice. Bureau is
+              the tier where the senior producer answers at 3am because that&apos;s the job.
             </p>
           </div>
 
@@ -279,15 +288,16 @@ export default function PricingPage() {
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
               <div className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: "var(--org-primary)" }}>
-                Add-Ons
+                Add-Ons. Stamps. Stunts. Diplomacy.
               </div>
               <h2 className="mt-3 text-4xl uppercase sm:text-5xl" style={{ fontFamily: "var(--font-display)" }}>
                 Stack on either path.
               </h2>
             </div>
             <p className="max-w-xl text-sm text-[var(--text-secondary)]">
-              Sold a la carte at scope-of-work or change-order. Stamped engineering and federation liaison are the
-              most-requested across all tiers.
+              A la carte at SOW or change-order. Most engagements pull two or three. Stamped engineering and
+              federation liaison are the most-requested across every tier — those are the things that turn a
+              confident proposal into a signed contract.
             </p>
           </div>
 
@@ -311,15 +321,19 @@ export default function PricingPage() {
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
               <div className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: "var(--org-primary)" }}>
-                Workback Schedule
+                Twelve Weeks. Milestone By Milestone.
               </div>
               <h2 className="mt-3 text-4xl uppercase sm:text-5xl" style={{ fontFamily: "var(--font-display)" }}>
-                What twelve weeks looks like.
+                Brief Monday.
+                <br />
+                Doors open
+                <br />
+                Show Week.
               </h2>
             </div>
             <p className="max-w-xl text-sm text-[var(--text-secondary)]">
-              A sample milestone-by-week workback for a Run-tier engagement. Real engagements bind real dates against
-              the same shape — the same workback table closes every signed proposal.
+              A sample milestone-by-week workback for a Run-tier engagement. Real engagements bind real dates
+              against the same shape — the same table closes every signed proposal we send. You can hold us to it.
             </p>
           </div>
           <div className="mt-8">
@@ -335,7 +349,7 @@ export default function PricingPage() {
               style={{ background: "linear-gradient(90deg, var(--org-primary), var(--org-accent))" }}
             />
             <h2 className="text-3xl uppercase sm:text-4xl" style={{ fontFamily: "var(--font-display)" }}>
-              How billing works.
+              How the money moves.
             </h2>
             <div className="mt-8 grid gap-8 md:grid-cols-3">
               <div>
@@ -377,10 +391,10 @@ export default function PricingPage() {
             </div>
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <Button href={paths.contact()} size="lg">
-                Start a Project
+                Hail The Studio
               </Button>
               <Button href={paths.servicesRoot()} size="lg" variant="secondary">
-                Services Catalog
+                Read The Catalog
               </Button>
             </div>
           </div>
@@ -389,10 +403,12 @@ export default function PricingPage() {
         {/* FAQ */}
         <section className="mx-auto max-w-6xl px-6">
           <div className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: "var(--org-primary)" }}>
-            Pricing FAQ
+            Questions That Show Up A Lot.
           </div>
           <h2 className="mt-3 text-4xl uppercase sm:text-5xl" style={{ fontFamily: "var(--font-display)" }}>
-            Common questions.
+            Plain answers.
+            <br />
+            No marketing voice.
           </h2>
           <div className="mt-10 grid gap-5 md:grid-cols-2">
             {FAQS.map((faq) => (

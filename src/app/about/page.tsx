@@ -6,32 +6,32 @@ import { GhxstshipJsonLd, breadcrumbSchema, organizationSchema } from "@/compone
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "About GHXSTSHIP — Experiential Production Company",
+  title: "About — The Ghost Ship Of Experiential Production",
   description:
-    "GHXSTSHIP is the experiential production company behind festivals, theme park attractions, theatrical productions, brand activations, and premium hospitality. Anchored in Miami, New York, Chicago, Los Angeles. Built ATLVS to run our own work — and now yours.",
+    "GHXSTSHIP runs festivals, theme park attractions, fan zones, theatrical productions, brand activations, and premium hospitality. Anchored in Miami, New York, Chicago, LA. We wrote the XPMS — the schema nobody else had — and run every engagement on it.",
   alternates: { canonical: "https://ghxstship.pro/about" },
 };
 
 const PRINCIPLES = [
   {
-    eyebrow: "01",
-    title: "One operating system, internal and external.",
-    body: "Every engagement runs on the same data model that publishes our public services catalog. Vendors, deliverables, compliance checks, budgets, schedules — all carry stable identifiers you can audit end to end. Same schema runs internally on our ATLVS software. Same schema is what you read on this site.",
+    eyebrow: "I",
+    title: "We wrote the schema.",
+    body: "The XPMS — Experiential Project Management System, v1.0 locked, append-only — is our operating system. Five orthogonal axes plus geography. Vendors, deliverables, compliance, budgets, schedules, COIs, talent riders — every transactable atom carries a stable identifier you can audit end to end. The same schema runs internally on ATLVS, the software arm. The same schema publishes the catalog you're reading. The brochure isn't a brochure. It's the database.",
   },
   {
-    eyebrow: "02",
+    eyebrow: "II",
     title: "Receipts, not promises.",
-    body: "Stamped engineering, signed certificates of insurance, executed master service agreements, fire-marshal sign-offs, sustainability reports — every deliverable lands in your folder structure with a stable name and a clear chain of custody.",
+    body: "Stamped engineering with the PE seal that matters in your jurisdiction. Signed COIs to every named party. Executed MSAs with phase-gated payment terms. Fire-marshal sign-offs. ESG reports sponsor-ready by Wrap. Photo-and-video assets with the Atom Identifier in the file name. We don't pitch the case study. We send it.",
   },
   {
-    eyebrow: "03",
-    title: "Operator language, no apologies.",
-    body: "We speak in load-in, advance, run-of-show, RFI, paddock, dry-dock, clean zone, front-of-house, and union jurisdictions. If you already know what those words mean, you'll feel at home. If you don't, we'll translate.",
+    eyebrow: "III",
+    title: "Operator vernacular. No apologies.",
+    body: "Load-in. Advance. Run-of-show. RFI. Paddock. Dry-dock. Clean zone. Front-of-house. IATSE jurisdiction. NFPA 701. ASTM F24. SOLAS. If you know what those words mean, welcome aboard. If you don't, we translate. We will not water it down so it sounds friendlier in a deck. Production is a craft, not a vibe.",
   },
   {
-    eyebrow: "04",
+    eyebrow: "IV",
     title: "Anchored, not headquartered.",
-    body: "We have full-time teams and dedicated fabrication in Miami, New York, Chicago, and Los Angeles. We deploy from those anchors into eight satellite cities and across national and international tiers. The team that briefs you is the team that builds it.",
+    body: "Full-time crews and dedicated fabrication in Miami, New York, Chicago, Los Angeles. Eight satellite ports — Orlando, Nashville, Austin, Atlanta, Minneapolis, Denver, Las Vegas, Seattle. Wherever the work lives, the ghost ship makes port. The producer who answers your email is the producer on site at load-in. We do not subcontract the show.",
   },
 ];
 
@@ -55,14 +55,18 @@ export default function AboutPage() {
           <h1 className="mt-4 text-5xl uppercase sm:text-7xl" style={{ fontFamily: "var(--font-display)" }}>
             The studio
             <br />
-            behind the studio.
+            with its own
+            <br />
+            operating system.
           </h1>
           <p className="mt-6 max-w-3xl text-lg text-[var(--text-secondary)]">
-            GHXSTSHIP is an experiential production company building festivals, theme park attractions, immersive
-            experiences, theatrical productions, brand activations, and premium hospitality at scale. We span{" "}
+            We&apos;re GHXSTSHIP. We run festivals, theme park attractions, immersive walkthroughs, theatrical
+            productions, fan zones, brand activations, F1 paddock clubs, Olympic hospitality houses, museum galas,
+            and the kind of premium private dinners where the wine cellar gets airlifted in. We span{" "}
             {CATALOG_STATS.serviceCount} services across {CATALOG_STATS.classCount} disciplines and{" "}
-            {CATALOG_STATS.solutionCount} industries. We&apos;re anchored in Miami, New York City, Chicago, and Los
-            Angeles, and we deliver nationally and internationally.
+            {CATALOG_STATS.solutionCount} industries, anchored in Miami, New York, Chicago, and Los Angeles, with
+            satellite ports across the country and international reach from any anchor. The XPMS — the framework
+            we wrote — is what lets us hold all of it inside one company without dropping the through-line.
           </p>
         </section>
 
@@ -93,34 +97,38 @@ export default function AboutPage() {
               </h2>
               <div className="mt-6 space-y-4 text-sm text-[var(--text-secondary)]">
                 <p>
-                  GHXSTSHIP Industries is the parent. LYTEHAUS Technologies — operating ATLVS, GVTEWAY, and COMPVSS — is
-                  the software arm we built so we&apos;d stop running production on spreadsheets.
+                  GHXSTSHIP Industries is the parent — the experiential production studio. LYTEHAUS Technologies is
+                  the software arm we built because we couldn&apos;t find a tool we trusted to run our own work.
+                  ATLVS, GVTEWAY, and COMPVSS are LYTEHAUS&apos;s three operating brands.
                 </p>
                 <p>
-                  ATLVS is the producer&apos;s console. GVTEWAY is the stakeholder portal. COMPVSS is the offline-first
-                  field app. The same data model powers all three. The same data model publishes this catalog.
+                  ATLVS is the producer&apos;s console. GVTEWAY is the stakeholder portal. COMPVSS is the
+                  offline-first field app the crew lives in once load-in starts. The same XPMS schema powers all
+                  three. The same schema publishes this catalog. Same vendor records. Same compliance framework.
+                  Same deliverable definitions on every surface.
                 </p>
                 <p>
                   When we tell a client we&apos;re running their engagement on the same system that publishes the
-                  catalog they read before they hired us, we mean it literally. Same vendor records. Same compliance
-                  framework. Same deliverable definitions.
+                  catalog they read before they hired us, we mean it literally. Pull the file; the file is the file.
                 </p>
               </div>
             </div>
             <div>
               <h2 className="text-3xl uppercase sm:text-4xl" style={{ fontFamily: "var(--font-display)" }}>
-                The roster.
+                The crew.
               </h2>
               <div className="mt-6 space-y-4 text-sm text-[var(--text-secondary)]">
                 <p>
-                  Producers, project managers, account managers, A1s, L1s, V1s, riggers, engineers (PE-stamped where it
-                  matters), hospitality leads, federation liaisons, fixers, conservators, art handlers, stage managers,
-                  broadcast directors, brand ambassadors. Inside our four anchor markets, full-time on payroll. Across
-                  satellite markets and the international tier, deep bench under master agreement.
+                  Producers. Project managers. Account managers. A1s, L1s, V1s. Riggers. Engineers — PE-stamped
+                  where it matters. Hospitality leads. Federation liaisons who&apos;ve worked Olympic, F1, FIFA,
+                  and NCAA accreditations. Fixers. Conservators. Art handlers with museum-grade documentation
+                  habits. Stage managers calling the show. Broadcast directors. Brand ambassadors.
                 </p>
                 <p>
-                  Every named role is a row in the catalog. Every catalog row is a real human with an availability
-                  calendar, a credentialing posture, and a published rate.
+                  In the four anchor ports — full-time on payroll. In satellite markets and the international tier
+                  — deep bench under master agreement, vetted, credentialed, and on call. Every named role is a row
+                  in the catalog. Every row is a real human with an availability calendar, a credentialing posture,
+                  and a published rate.
                 </p>
               </div>
             </div>
@@ -130,18 +138,18 @@ export default function AboutPage() {
         <section className="mx-auto max-w-6xl px-6">
           <div className="surface-raised p-10">
             <h2 className="text-3xl uppercase sm:text-4xl" style={{ fontFamily: "var(--font-display)" }}>
-              Brief us.
+              Hail the studio.
             </h2>
             <p className="mt-3 max-w-xl text-[var(--text-secondary)]">
-              A paragraph in plain English is fine. A six-hundred-line RFP is fine. A drunk voice memo at 2am that
-              becomes a festival is the most fun. We answer all three.
+              A paragraph in plain English is fine. A six-hundred-line RFP is fine. A voice memo recorded at 2am
+              that becomes a festival is, frankly, our favorite. We answer all three. Inside one business day.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <Button href={paths.contact()} size="lg">
-                Start a Project
+                Hail The Studio
               </Button>
               <Button href={paths.pricing()} size="lg" variant="secondary">
-                See pricing
+                Read The Articles
               </Button>
             </div>
           </div>

@@ -139,7 +139,7 @@ export default async function SagaDetail({ params }: { params: Promise<{ slug: s
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <Button href={paths.contact()} size="lg">
-                Start a Project
+                Hail The Studio
               </Button>
               <Button href={paths.issuesRoot()} size="lg" variant="secondary">
                 All Issues

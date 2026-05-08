@@ -57,10 +57,11 @@ export default function SolutionsHub() {
             {CATALOG_STATS.solutionCount} industries · one studio · one playbook
           </div>
           <p className="mt-6 max-w-2xl text-lg text-[var(--text-secondary)]">
-            Different industries draw on different services. A theme park ride launch and a museum gala both touch
-            scenic fabrication, but the compliance posture, the audience, and the run-of-show look nothing alike. Browse
-            by what you&apos;re building below; each industry page lists every service we anchor in that vertical, along
-            with phase emphasis, depth of detail, and where it tends to happen geographically.
+            A theme park ride launch and a museum gala both touch scenic fabrication, but the compliance posture,
+            the audience, the union jurisdiction, and the run-of-show share almost nothing. We don&apos;t pretend
+            otherwise. Each industry page below lists every service anchored in that vertical — plus the phase
+            emphasis, the depth of detail, the experience modes, and where the work tends to land geographically.
+            Pick yours and the producer behind it answers email.
           </p>
         </section>
 

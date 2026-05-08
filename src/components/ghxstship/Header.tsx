@@ -123,7 +123,7 @@ export function GhxstshipHeader() {
             Contact
           </Button>
           <Button href="/contact" size="sm">
-            Start a Project
+            Hail The Studio
           </Button>
         </div>
         <button
@@ -164,7 +164,7 @@ export function GhxstshipHeader() {
                 Pricing
               </Button>
               <Button href="/contact" size="sm">
-                Start a Project
+                Hail The Studio
               </Button>
             </div>
           </div>

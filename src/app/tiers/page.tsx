@@ -25,17 +25,19 @@ export default function TiersHub() {
       <div className="space-y-16 pb-24">
         <section className="mx-auto max-w-6xl px-6 pt-16">
           <div className="text-xs font-semibold tracking-[0.25em] uppercase" style={{ color: "var(--org-primary)" }}>
-            Experience Modes
+            The Six Tiers Of Experience
           </div>
           <h1 className="mt-4 text-5xl uppercase sm:text-7xl" style={{ fontFamily: "var(--font-display)" }}>
             How the audience
             <br />
-            experiences it.
+            actually feels it.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-[var(--text-secondary)]">
-            A festival main stage, a theatrical run, a livestream broadcast, and a sponsor activation village all
-            deliver different kinds of audience experience. The mode shapes the design, the staffing, and the success
-            metric. Most engagements span two or three modes at once.
+            A festival main stage, a theatrical opening night, a multi-camera broadcast, a sponsor activation
+            village — they all deliver fundamentally different audience experiences. The mode shapes the design,
+            the staffing, the success metric, and the cue stack. The XPMS classifies every engagement against six
+            tiers: Social, Digital, Virtual, Physical, Experiential, Theatrical. Most productions span two or
+            three. Some — the kind that headline case studies — span all six.
           </p>
         </section>
 

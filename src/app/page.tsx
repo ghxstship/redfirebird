@@ -21,9 +21,9 @@ import { BrandMarkCeremony } from "@/components/ghxstship/BrandMarkCeremony";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "GHXSTSHIP — Experiential Production Company | Festivals, Theme Parks, Live Events",
+  title: "GHXSTSHIP — The Ghost Ship Of Experiential Production",
   description:
-    "Experiential production at scale — festivals, immersive experiences, theme park attractions, brand activations, theatrical productions, and premium hospitality. Anchored in Miami, New York City, Chicago, and Los Angeles.",
+    "We run festivals, theme park attractions, fan zones, theatrical productions, and the kind of premium hospitality where the wine cellar gets airlifted in. The XPMS is our operating system. The catalog is the receipt. Brief us Monday; we answer Wednesday.",
   keywords: [
     "experiential production company",
     "festival production company",
@@ -33,18 +33,23 @@ export const metadata: Metadata = {
     "brand activation agency",
     "theatrical production company",
     "premium hospitality production",
+    "Olympic hospitality production",
+    "F1 paddock club production",
+    "fan zone production",
     "Miami event production",
     "New York event production",
     "Los Angeles event production",
     "Chicago event production",
+    "XPMS",
+    "experiential project management system",
   ],
   alternates: { canonical: "https://ghxstship.pro" },
 };
 
 const PROOF_STATS = [
-  { label: "Services", value: CATALOG_STATS.serviceCount, sub: "Disciplines under one roof" },
-  { label: "Industries", value: CATALOG_STATS.solutionCount, sub: "From festivals to fan zones" },
-  { label: "Markets", value: CATALOG_STATS.marketCount, sub: "Anchored + national reach" },
+  { label: "Services", value: CATALOG_STATS.serviceCount, sub: "Disciplines on one ship" },
+  { label: "Industries", value: CATALOG_STATS.solutionCount, sub: "Festivals to fan zones" },
+  { label: "Markets", value: CATALOG_STATS.marketCount, sub: "Four anchors. Eight ports." },
   { label: "Phases", value: CATALOG_STATS.phaseCount, sub: "Discovery to wrap" },
 ];
 
@@ -59,24 +64,28 @@ const FEATURED_SOLUTIONS = [
 
 const FAQS = [
   {
-    q: "What kind of productions does GHXSTSHIP take on?",
-    a: "Festivals and concert tours, theme park attractions, immersive experiences, brand activations and pop-ups, theatrical performances, art and cultural installations, premium sporting hospitality and fan zones, conferences and trade shows, luxury retail and dining, weddings and private estate events, cruise ship and maritime entertainment, and ultra-premium private events. Nineteen industry verticals in total.",
+    q: "What does GHXSTSHIP actually take on?",
+    a: "Festivals. Concert tours. Theme park attractions. Immersive walkthroughs. Brand activations. Pop-up retail. Theatrical productions. Museum galas. Olympic Hospitality Houses. F1 Paddock Clubs. Super Bowl fan zones. Cruise-ship onboard entertainment. Yacht-week private dinners with the wine cellar airlifted in. Nineteen industry verticals in total — and if your work doesn't fit one of those nineteen, write us anyway. We've made room before.",
   },
   {
-    q: "Where does GHXSTSHIP operate?",
-    a: "Four anchor markets with full-time teams and dedicated fabrication capacity: Miami, New York City, Chicago, and Los Angeles. Eight satellite markets serviced from those anchors: Orlando, Nashville, Austin, Atlanta, Minneapolis, Denver, Las Vegas, and Seattle. National and international productions are handled from the closest anchor.",
+    q: "Where do you sail?",
+    a: "Four anchor ports — Miami, New York, Chicago, Los Angeles — with full-time crews and dedicated fabrication. Eight satellite markets we sail to under our own flag: Orlando, Nashville, Austin, Atlanta, Minneapolis, Denver, Las Vegas, Seattle. National and international productions launch from the closest anchor. Wherever the work lives, the ghost ship makes port.",
   },
   {
-    q: "How is GHXSTSHIP different from a typical event agency?",
-    a: "GHXSTSHIP runs every engagement on the same internal data model — the Experiential Project Management System (XPMS) — that publishes our public service catalog. Every deliverable, vendor, compliance check, and budget line carries a stable identifier you can audit end to end. Same schema runs internally on our ATLVS software. Same schema is what you read on this site.",
+    q: "What makes GHXSTSHIP different from another agency with a slick deck?",
+    a: "The XPMS — the Experiential Project Management System we wrote because nobody had one. Five orthogonal axes (class, phase, level, tier, solution) plus geography, locked at v1.0, append-only forever. Every transactable atom carries a stable identifier you can audit end to end. The same schema that runs internally on our ATLVS software is the schema that publishes this catalog. The brochure isn't a brochure. It's the database.",
   },
   {
-    q: "Do you handle production end to end, or only specific phases?",
-    a: "Both. We engage across all eight production phases — Discovery, Concept, Develop, Advance, Build, Show, Strike, and Wrap — or any subset. Per-project tiers are scoped to a single brief. Retainers run continuous engagements across multiple briefs.",
+    q: "Do you handle production end to end, or just one phase?",
+    a: "Both. Eight production phases — Discovery, Concept, Develop, Advance, Build, Show, Strike, Wrap — engage across all of them or pick a subset. Per-project tiers are scoped to a single brief. Retainers run continuously. We've called shows we didn't engineer; we've engineered shows we didn't call. We work where the work needs us.",
   },
   {
-    q: "Who owns the deliverables and IP at the end of an engagement?",
-    a: "You do. All concept artwork, design files, engineering drawings, and production documentation transfer to you on final invoice. Reusable touring scenic systems and trade show booth assets stay in our climate-controlled storage by default for redeployment, but ownership is yours.",
+    q: "Who owns the IP and the deliverables when you wrap?",
+    a: "You do. Every concept artwork, design file, engineering drawing, and production document transfers to you on final invoice — with a stable Atom Identifier in the file name so the file is the file. Reusable touring scenic and trade-show assets sit in our climate-controlled storage by default, available for redeployment, but ownership rests with the brief that paid for them.",
+  },
+  {
+    q: "What's the fastest you've stood up a real production?",
+    a: "Forty-eight hours from brief to doors, twice. We don't recommend it. We can do it.",
   },
 ];
 
@@ -119,32 +128,34 @@ export default function GhxstshipHome() {
         <section className="mx-auto max-w-6xl px-6 pt-20 pb-12">
           <div className="text-xs font-semibold tracking-[0.25em] uppercase">
             <span style={{ color: "var(--org-primary)" }}>GHXSTSHIP Industries</span>
-            <span className="ml-3 text-[var(--text-muted)]">Est. Miami · New York · Chicago · Los Angeles</span>
+            <span className="ml-3 text-[var(--text-muted)]">All hands · Miami · New York · Chicago · Los Angeles</span>
           </div>
           <h1
             className="mt-6 text-5xl leading-[0.95] font-semibold tracking-tight uppercase sm:text-7xl lg:text-[8rem]"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            Experiential
+            Experience
             <br />
-            <span style={{ color: "var(--org-primary)" }}>production,</span>
+            <span style={{ color: "var(--org-primary)" }}>at scale.</span>
             <br />
-            built once,
+            Show called
             <br />
-            run anywhere.
+            on time.
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-[var(--text-secondary)]">
-            We design, engineer, fabricate, and operate festivals, immersive experiences, theme park attractions,
-            theatrical productions, brand activations, and premium hospitality. The same operating system that runs
-            inside our studio publishes the catalog you&apos;re reading — so the work you brief us on Monday becomes a
-            scoped, priced, and assignable engagement by Wednesday.
+            We are GHXSTSHIP. We sail under our own flag — running festivals, theme park attractions, fan zones, F1
+            paddock clubs, Olympic hospitality houses, theatrical productions, and the kind of premium dinners
+            where the wine cellar gets airlifted in. The XPMS — the Experiential Project Management System we
+            wrote because nobody had one — is our operating system. The catalog you&apos;re reading is the database.
+            Brief us Monday; we name the producer, the price band, and the schedule by Wednesday. The work goes up
+            regardless.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-3">
             <Button href={paths.contact()} size="lg">
-              Start a Project
+              Hail The Studio
             </Button>
             <Button href={paths.servicesRoot()} size="lg" variant="secondary">
-              Services Catalog
+              Read The Catalog
             </Button>
             <Link href={paths.pricing()} className="btn btn-ghost btn-lg">
               Pricing →
@@ -173,71 +184,73 @@ export default function GhxstshipHome() {
         {/* PROJECT OVERVIEW PAIR — proposal-shape Identity + Engagement */}
         <section className="mx-auto max-w-6xl px-6">
           <div className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: "var(--org-primary)" }}>
-            The Studio. The Engagement. The Receipt.
+            Who&apos;s On The Bridge. What&apos;s In The Hold.
           </div>
           <h2 className="mt-3 text-4xl uppercase sm:text-5xl" style={{ fontFamily: "var(--font-display)" }}>
-            Who we are. How we work.
+            We have a system.
+            <br />
+            We have a fleet.
           </h2>
           <div className="mt-8 grid gap-5 md:grid-cols-2">
             <div className="surface-raised p-8">
               <div className="text-[11px] font-semibold tracking-[0.18em] uppercase" style={{ color: "var(--org-primary)" }}>
-                Studio Identity
+                The Studio
               </div>
               <h3 className="mt-3 text-2xl uppercase sm:text-3xl" style={{ fontFamily: "var(--font-display)" }}>
                 GHXSTSHIP Industries.
               </h3>
               <p className="mt-3 text-sm text-[var(--text-secondary)]">
-                Experiential production company. Built ATLVS so we&apos;d stop running production on spreadsheets;
-                run every engagement on the same operating system that publishes this catalog. Anchored Miami, New
-                York, Chicago, Los Angeles. Eight satellites. National + international tiers from any anchor.
+                We&apos;re the studio that hated spreadsheets enough to write our own software. The team that briefs
+                you is the team that builds it — we don&apos;t subcontract the show. Anchored in Miami, New York,
+                Chicago, Los Angeles. Eight satellite ports. Wherever the work lives, the ghost ship makes port.
               </p>
               <ul className="mt-4 space-y-1.5 text-xs">
                 <li className="flex items-start gap-2 text-[var(--text-secondary)]">
                   <span className="mt-1 inline-block h-1 w-1" style={{ background: "var(--org-accent)" }} />
-                  <span>Full-time producers, A1s, L1s, V1s, riggers, hospitality leads, federation liaisons.</span>
+                  <span>Producers, A1s, L1s, V1s, riggers, hospitality leads, federation liaisons — full-time on payroll.</span>
                 </li>
                 <li className="flex items-start gap-2 text-[var(--text-secondary)]">
                   <span className="mt-1 inline-block h-1 w-1" style={{ background: "var(--org-accent)" }} />
-                  <span>PE-stamped engineering where it matters. NFPA 701, IATSE, USCG, IMO posture in-house.</span>
+                  <span>PE-stamped engineering. NFPA 701, IATSE, USCG, IMO posture in-house. We bring our own stamp.</span>
                 </li>
                 <li className="flex items-start gap-2 text-[var(--text-secondary)]">
                   <span className="mt-1 inline-block h-1 w-1" style={{ background: "var(--org-accent)" }} />
-                  <span>Sustainability + ESG measurement on every engagement, sponsor-ready by Wrap.</span>
+                  <span>Sustainability and ESG measurement baked into every engagement. Sponsor-ready by Wrap.</span>
                 </li>
               </ul>
             </div>
             <div className="surface-raised p-8">
               <div className="text-[11px] font-semibold tracking-[0.18em] uppercase" style={{ color: "var(--org-primary)" }}>
-                Engagement Approach
+                The Engagement
               </div>
               <h3 className="mt-3 text-2xl uppercase sm:text-3xl" style={{ fontFamily: "var(--font-display)" }}>
-                Per-Project. Or On Retainer.
+                Two contracts. One ship.
               </h3>
               <p className="mt-3 text-sm text-[var(--text-secondary)]">
-                Per-Project for a single brief — five tiers from a one-night activation to a multi-year mega-event.
-                Retainer for ongoing programs — four bundles built around team composition. Add-ons stack on either
-                path. Production costs pass through at cost.
+                Per-Project for a single brief — five tiers, one-night activation up to mega-event. Retainer for
+                ongoing programs — four team-composition bundles. Add-ons stack either way. The numbers are clean,
+                the framework is yours to inspect, and the producer who answers your email is on site at load-in.
               </p>
               <ul className="mt-4 space-y-1.5 text-xs">
                 <li className="flex items-start gap-2 text-[var(--text-secondary)]">
                   <span className="mt-1 inline-block h-1 w-1" style={{ background: "var(--org-accent)" }} />
-                  <span>60% professional fee on signature, 40% at load-in. Phase-gated SOW, change-order framework.</span>
+                  <span>Sixty on signature. Forty on load-in. Phase-gated SOW. Change-orders that actually mean something.</span>
                 </li>
                 <li className="flex items-start gap-2 text-[var(--text-secondary)]">
                   <span className="mt-1 inline-block h-1 w-1" style={{ background: "var(--org-accent)" }} />
-                  <span>Reply within one business day with engagement model, producer assignment, price band.</span>
+                  <span>One business day to respond. Engagement model, producer assignment, price band. Or we owe you a coffee.</span>
                 </li>
                 <li className="flex items-start gap-2 text-[var(--text-secondary)]">
                   <span className="mt-1 inline-block h-1 w-1" style={{ background: "var(--org-accent)" }} />
-                  <span>Same data model end to end — proposal, console, portal, field app, wrap report.</span>
+                  <span>Same XPMS spine across proposal, console, field app, wrap report. The file is the file.</span>
                 </li>
               </ul>
               <div className="mt-5 flex flex-wrap items-center gap-2">
                 <Link href={paths.pricing()} className="btn btn-secondary btn-sm">
-                  Pricing &amp; Retainers
+                  Read The Articles
                 </Link>
                 <Link href={paths.contact()} className="btn btn-primary btn-sm">
-                  Brief the Studio
+                  Hail The Studio
                 </Link>
               </div>
             </div>
@@ -256,17 +269,19 @@ export default function GhxstshipHome() {
                     className="text-xs font-semibold tracking-[0.2em] uppercase"
                     style={{ color: "var(--org-primary)" }}
                   >
-                    Issues. Sagas. Receipts.
+                    The Log Book Is The Pitch.
                   </div>
                   <h2 className="mt-3 text-4xl uppercase sm:text-5xl" style={{ fontFamily: "var(--font-display)" }}>
-                    Numbered. Append-only.
+                    Issues. Sagas.
+                    <br />
+                    Receipts in ink.
                   </h2>
                 </div>
                 <Link
                   href={paths.issuesRoot()}
                   className="text-sm font-semibold tracking-wide uppercase hover:text-[var(--org-primary)]"
                 >
-                  All issues →
+                  Open the log →
                 </Link>
               </div>
               <div className="mt-8 grid gap-5 lg:grid-cols-3">
@@ -337,9 +352,11 @@ export default function GhxstshipHome() {
                 Discovery. Concept. Develop. Show.
               </div>
               <h2 className="mt-3 text-4xl uppercase sm:text-5xl" style={{ fontFamily: "var(--font-display)" }}>
-                The same eight phases.
+                Eight phases.
                 <br />
                 Every engagement.
+                <br />
+                Every time.
               </h2>
             </div>
             <Link
@@ -350,9 +367,10 @@ export default function GhxstshipHome() {
             </Link>
           </div>
           <p className="mt-4 max-w-2xl text-sm text-[var(--text-secondary)]">
-            Sample windows below assume a typical 12-week per-project engagement. Each phase carries milestones,
-            deliverables, and an approval gate that must close before the next phase begins. Same artifact lands at
-            the top of every signed proposal.
+            The Eight Production Phases (8PP) — Discovery through Wrap — are the temporal spine of every engagement
+            we run. Each phase carries milestones, deliverables, and an approval gate that has to close before we
+            move. The cards below assume a 12-week per-project engagement; the artifact lands at the top of every
+            signed proposal.
           </p>
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {LIFECYCLE.slice(0, 4).map((phase) => (
@@ -369,15 +387,17 @@ export default function GhxstshipHome() {
                 Search. Browse. Brief.
               </div>
               <h2 className="mt-3 text-4xl uppercase sm:text-5xl" style={{ fontFamily: "var(--font-display)" }}>
-                Six ways to find
+                Six axes.
                 <br />
-                the right team.
+                One catalog.
+                <br />
+                Pick a thread.
               </h2>
             </div>
             <p className="text-[var(--text-secondary)]">
-              Production touches a lot of disciplines. Search by what you build, when in the lifecycle, how deep the
-              detail goes, what kind of experience it is, what industry it serves, or where it happens. Every path lands
-              on a real producer with a real portfolio.
+              The XPMS indexes every transactable atom along five orthogonal axes — class, phase, level of detail,
+              experience mode, industry — plus geography. Pull any thread and you land on a real producer with a
+              real portfolio. There&apos;s no marketing layer between you and the work.
             </p>
           </div>
 
@@ -386,42 +406,42 @@ export default function GhxstshipHome() {
               icon={<Layers className="h-5 w-5" />}
               count={CATALOG_STATS.classCount}
               title="Disciplines"
-              blurb="Production, build, hospitality, technology, operations, executive — ten core disciplines covering everything we touch."
+              blurb="Ten classes, append-only, locked at v1.0 — the XTC Codebook. Production, build, hospitality, ops, executive. Every line of work has a class code that never changes."
               href={paths.servicesRoot()}
             />
             <AxisCard
               icon={<Clock3 className="h-5 w-5" />}
               count={CATALOG_STATS.phaseCount}
               title="Phases"
-              blurb="Discovery, concept, develop, advance, build, show, strike, wrap. Engage across all eight or any subset."
+              blurb="Discovery, Concept, Develop, Advance, Build, Show, Strike, Wrap. The 8PP — engage end to end or just the phase you need lifted."
               href={paths.phasesRoot()}
             />
             <AxisCard
               icon={<Building2 className="h-5 w-5" />}
               count={6}
               title="Detail Depth"
-              blurb="From multi-year programs down to single rigging components. We work at the level your brief lives at."
+              blurb="The APS hierarchy — six levels from L1 Project down to L6 Item. We work at the level the brief lives at. Mega-event or a single welded archway."
               href={paths.servicesRoot()}
             />
             <AxisCard
               icon={<Hexagon className="h-5 w-5" />}
               count={CATALOG_STATS.tierCount}
               title="Experience Modes"
-              blurb="Social, digital, virtual, physical, experiential, theatrical. Most engagements span two or three."
+              blurb="Social, Digital, Virtual, Physical, Experiential, Theatrical. The Six Tiers — most engagements span two or three. Some span all six."
               href={paths.tiersRoot()}
             />
             <AxisCard
               icon={<Compass className="h-5 w-5" />}
               count={CATALOG_STATS.solutionCount}
               title="Industries"
-              blurb="Festivals to fan zones, theme parks to maritime, art galleries to F1 paddock clubs. Nineteen verticals."
+              blurb="Festivals to fan zones. Theme parks to maritime. Art galleries to F1 paddock clubs. Nineteen verticals, every one with its own compliance posture."
               href={paths.solutionsRoot()}
             />
             <AxisCard
               icon={<MapPin className="h-5 w-5" />}
               count={CATALOG_STATS.marketCount}
               title="Markets"
-              blurb="Miami, New York, Chicago, Los Angeles. Plus eight satellites. National and international from any anchor."
+              blurb="Four anchor ports — Miami, New York, Chicago, LA. Eight satellites. National and international from the closest anchor. The ghost ship sails wide."
               href={paths.marketsRoot()}
             />
           </div>
@@ -432,7 +452,7 @@ export default function GhxstshipHome() {
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
               <div className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: "var(--org-primary)" }}>
-                Capabilities
+                Drawn. Built. Printed. Installed.
               </div>
               <h2 className="mt-3 text-4xl uppercase sm:text-5xl" style={{ fontFamily: "var(--font-display)" }}>
                 Ten disciplines.
@@ -473,7 +493,7 @@ export default function GhxstshipHome() {
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
               <div className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: "var(--org-primary)" }}>
-                Industries
+                Festivals. Fan Zones. Theme Parks. Theatres.
               </div>
               <h2 className="mt-3 text-4xl uppercase sm:text-5xl" style={{ fontFamily: "var(--font-display)" }}>
                 Where the
@@ -521,7 +541,7 @@ export default function GhxstshipHome() {
                   className="text-xs font-semibold tracking-[0.2em] uppercase"
                   style={{ color: "var(--org-primary)" }}
                 >
-                  How We Work Together
+                  Articles Of Engagement
                 </div>
                 <h2 className="mt-3 text-4xl uppercase sm:text-5xl" style={{ fontFamily: "var(--font-display)" }}>
                   Per project.
@@ -530,18 +550,18 @@ export default function GhxstshipHome() {
                 </h2>
               </div>
               <p className="text-[var(--text-secondary)]">
-                <strong className="text-[var(--text-primary)]">Per Project</strong> — five tiers from a single-night
-                activation to a multi-year mega-event. <strong className="text-[var(--text-primary)]">Retainer</strong>{" "}
-                — four team-composition bundles from a coordinator pair to a 24/7 senior team. Add-ons stack on either
-                path.
+                <strong className="text-[var(--text-primary)]">Per Project</strong> — five tiers, one-night
+                activation up to mega-event. <strong className="text-[var(--text-primary)]">Retainer</strong> — four
+                team-composition bundles, from a coordinator pair through a 24/7 senior crew. Add-ons stack on
+                either path. The numbers are clean, the pass-through is at cost, and the captain answers the email.
               </p>
             </div>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Button href={paths.pricing()} size="lg">
-                See pricing
+                Read The Articles
               </Button>
               <Button href={paths.contact()} size="lg" variant="secondary">
-                Start a Project
+                Hail The Studio
               </Button>
             </div>
           </div>
@@ -550,7 +570,7 @@ export default function GhxstshipHome() {
         {/* MARKETS STRIP */}
         <section className="mx-auto max-w-6xl px-6">
           <div className="text-xs font-semibold tracking-[0.2em] text-[var(--text-muted)] uppercase">
-            Anchor Markets
+            Where We Make Port
           </div>
           <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {ANCHOR_MARKETS.map((m) => (
@@ -567,7 +587,7 @@ export default function GhxstshipHome() {
               href={paths.marketsRoot()}
               className="text-sm font-semibold tracking-wide uppercase hover:text-[var(--org-primary)]"
             >
-              All twelve markets, including satellites →
+              All twelve ports, including satellites →
             </Link>
           </div>
         </section>
@@ -575,10 +595,12 @@ export default function GhxstshipHome() {
         {/* FAQ */}
         <section className="mx-auto max-w-6xl px-6">
           <div className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: "var(--org-primary)" }}>
-            FAQ
+            Questions That Show Up A Lot.
           </div>
           <h2 className="mt-3 text-4xl uppercase sm:text-5xl" style={{ fontFamily: "var(--font-display)" }}>
-            Common questions.
+            Plain answers.
+            <br />
+            No marketing voice.
           </h2>
           <div className="mt-10 grid gap-5 md:grid-cols-2">
             {FAQS.map((faq) => (

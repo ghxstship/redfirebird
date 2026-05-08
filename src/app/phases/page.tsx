@@ -25,15 +25,21 @@ export default function PhasesHub() {
       <div className="space-y-16 pb-24">
         <section className="mx-auto max-w-6xl px-6 pt-16">
           <div className="text-xs font-semibold tracking-[0.25em] uppercase" style={{ color: "var(--org-primary)" }}>
-            Production Phases
+            The Eight Production Phases
           </div>
           <h1 className="mt-4 text-5xl uppercase sm:text-7xl" style={{ fontFamily: "var(--font-display)" }}>
-            Discovery to Wrap.
+            Discovery
+            <br />
+            to Wrap.
+            <br />
+            No phase skipped.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-[var(--text-secondary)]">
-            Every production touches some or all of eight phases. Use the phase pages to understand what we do and when
-            — what gets decided in Discovery, what ships in Build, what closes in Wrap. Engage end to end or scope us
-            into a single phase where you need the lift.
+            The 8PP — Discovery, Concept, Develop, Advance, Build, Show, Strike, Wrap — is the temporal spine of
+            the XPMS. Every production we run touches some or all of them, in that order, each with an approval
+            gate that has to close before the next opens. Engage across the full lifecycle, or hire us into one
+            phase where you need a senior lift. Each phase below tells you what gets decided, what ships, and what
+            has to close before we move.
           </p>
         </section>
 

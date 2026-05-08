@@ -33,33 +33,34 @@ export default function IssuesHub() {
       <div className="space-y-20 pb-24">
         <section className="mx-auto max-w-6xl px-6 pt-16">
           <div className="text-xs font-semibold tracking-[0.25em] uppercase" style={{ color: "var(--org-primary)" }}>
-            Issues
+            The Log Book Of The Ghost Ship
           </div>
           <h1 className="mt-4 text-5xl uppercase sm:text-7xl" style={{ fontFamily: "var(--font-display)" }}>
             Numbered.
             <br />
             Saga-affiliated.
             <br />
-            Append-only.
+            Receipts in ink.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-[var(--text-secondary)]">
-            Every delivered engagement gets an issue number. Numbers are stable for life — they appear in proposal
-            footers, in case-study URLs, and in the saga register. New issues land monotonically. Upcoming issues
-            tease the slate before they ship.
+            Every delivered engagement gets an issue number. Numbers are stable for life — they appear in the
+            proposal footer, the case-study URL, the wrap report PDF, and our internal calling card. New issues
+            land monotonically; old ones never get retired. Upcoming issues tease the slate before they ship —
+            because if you&apos;re going to read the log, you might as well see what&apos;s on the horizon.
           </p>
         </section>
 
         {IN_FLIGHT_ISSUES.length > 0 && (
-          <IssueRow heading="In Flight" issues={IN_FLIGHT_ISSUES} eyebrow="Currently building" />
+          <IssueRow heading="In Flight" issues={IN_FLIGHT_ISSUES} eyebrow="Crew on station, build in progress" />
         )}
-        <IssueRow heading="Shipped" issues={SHIPPED_ISSUES} eyebrow="Delivered, archived, available for reference" />
+        <IssueRow heading="Shipped" issues={SHIPPED_ISSUES} eyebrow="Wrapped. Archived. Available under reference." />
         {UPCOMING_ISSUES.length > 0 && (
-          <IssueRow heading="Upcoming" issues={UPCOMING_ISSUES} eyebrow="On the slate" muted />
+          <IssueRow heading="Upcoming" issues={UPCOMING_ISSUES} eyebrow="On the slate. Crew assigned. Doors not yet open." muted />
         )}
 
         <section className="mx-auto max-w-6xl px-6">
           <div className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: "var(--org-primary)" }}>
-            Sagas
+            Sagas. The Arcs Above The Issues.
           </div>
           <h2 className="mt-3 text-3xl uppercase sm:text-4xl" style={{ fontFamily: "var(--font-display)" }}>
             The arcs that group the issues.

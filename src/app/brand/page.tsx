@@ -53,12 +53,13 @@ const TYPE_RULES = [
 ];
 
 const VOICE_RULES = [
-  "Title Case for all non-body text — headings, labels, buttons, eyebrows.",
-  "Sentence case in body paragraphs.",
-  "Triadic-period h2 cadence: \"Drawn. Built. Printed. Installed.\" Use sparingly, deliberately.",
-  "Operator vernacular, no apologies — load-in, advance, ROS, RFI, paddock, dry-dock.",
-  "No internal jargon to clients — no XPMS, no Atom Identifier, no class codes in marketing copy.",
-  "Receipts over promises. Show the work; don't pitch the work.",
+  "Title Case for non-body text — headings, eyebrows, labels, buttons. Sentence case in paragraphs.",
+  "Triadic-period h2 cadence. \"Drawn. Built. Printed. Installed.\" Used sparingly. Used deliberately.",
+  "Operator vernacular, no apologies. Load-in, advance, ROS, RFI, paddock, dry-dock. We don't translate down.",
+  "XPMS is the framework, not jargon. Lean into it as a thought-leader anchor; don't bury it.",
+  "Receipts over promises. We send the case study; we don't pitch it.",
+  "Wit with weight. Sparrow swagger, Stark dryness, Avengers operatic stakes — earned through receipts, not branding.",
+  "Never compare to competitors. The ghost ship sails alone.",
 ];
 
 export default function BrandPage() {
@@ -76,19 +77,20 @@ export default function BrandPage() {
         {/* HERO */}
         <section className="mx-auto max-w-6xl px-6 pt-16">
           <div className="text-xs font-semibold tracking-[0.25em] uppercase" style={{ color: "var(--org-primary)" }}>
-            Brand
+            The Brand Book
           </div>
           <h1 className="mt-4 text-5xl uppercase sm:text-7xl" style={{ fontFamily: "var(--font-display)" }}>
-            Living guide.
+            Live tokens.
             <br />
-            Same tokens
+            No PDF.
             <br />
-            as the site.
+            Always shipping.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-[var(--text-secondary)]">
-            This page is rendered from the live design tokens. When the master palette shifts, this page shifts.
-            When a new saga lands, this page lists it. When a spotlight is retired, this page reflects it. The brand
-            guide is the production system.
+            This page renders straight from the design tokens that paint every other page on the site. Master
+            palette shifts — this page shifts. New saga lands — this page lists it. Spotlight retires — this page
+            reflects it. The brand guide isn&apos;t a PDF in a shared drive going stale. The brand guide is the
+            production system. If it&apos;s on this page, it&apos;s shipping in production.
           </p>
         </section>
 
@@ -288,7 +290,7 @@ export default function BrandPage() {
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <Button href={paths.contact()} size="lg">
-                Start a Project
+                Hail The Studio
               </Button>
               <Button href={paths.issuesRoot()} size="lg" variant="secondary">
                 Browse Issues

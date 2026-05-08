@@ -120,10 +120,10 @@ export default async function MarketDetail({ params }: { params: Promise<{ city:
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <Button href={paths.contact()} size="lg">
-                Start a Project
+                Hail The Studio
               </Button>
               <Button href={paths.solutionsRoot()} size="lg" variant="secondary">
-                Browse Industries
+                Browse The Industries
               </Button>
             </div>
           </div>

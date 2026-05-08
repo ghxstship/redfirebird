@@ -7,34 +7,34 @@ import { GhxstshipJsonLd, breadcrumbSchema } from "@/components/ghxstship/JsonLd
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "Contact GHXSTSHIP — Start a Project",
+  title: "Hail The Studio — Brief GHXSTSHIP",
   description:
-    "Brief GHXSTSHIP. A paragraph in plain English, an RFP, or a voice memo. We resolve every brief against the same services catalog and reply with scope, model, and producer assignment within one business day.",
+    "Send a brief. A paragraph in plain English. A 600-line RFP. A voice memo from a 2am idea that won't quit. We answer all three within one business day with engagement model, producer assignment, and price band.",
   alternates: { canonical: "https://ghxstship.pro/contact" },
 };
 
 const ROUTES = [
   {
-    label: "Start a Project",
-    body: "New engagement, RFP, or scoping conversation. We reply with engagement model, producer assignment, and price band.",
+    label: "Hail The Studio",
+    body: "New engagement, RFP, scoping conversation. We answer with engagement model, producer assignment, price band — inside one business day. Or we owe you a coffee.",
     href: "mailto:studio@ghxstship.pro",
     line: "studio@ghxstship.pro",
   },
   {
     label: "Federation & Mega-Event",
-    body: "Olympic, FIFA, F1, Super Bowl, World Cup, NCAA, OCOG-tier, federation accreditation, host-city liaison.",
+    body: "Olympic, FIFA, F1, Super Bowl, World Cup, NCAA, OCOG-tier. Accreditation, host-city liaison, clean-zone enforcement, brand-rights compliance. Direct line to the federation desk.",
     href: "mailto:federation@ghxstship.pro",
     line: "federation@ghxstship.pro",
   },
   {
     label: "Press & Partnerships",
-    body: "Media, sponsorship inbound, brand collaborations, podcast asks, speaking engagements.",
+    body: "Media. Sponsorship inbound. Brand collaborations. Podcast asks. Speaking engagements. We answer everything; we say yes to less.",
     href: "mailto:press@ghxstship.pro",
     line: "press@ghxstship.pro",
   },
   {
-    label: "Roster & Crew",
-    body: "Producers, technicians, riggers, hospitality, fixers — apply with your portfolio and city. We onboard quarterly.",
+    label: "Crew Manifest",
+    body: "Producers, technicians, riggers, hospitality leads, fixers — looking to sail. Send the portfolio, the city, the gear list. We onboard quarterly, tides willing.",
     href: "mailto:roster@ghxstship.pro",
     line: "roster@ghxstship.pro",
   },
@@ -52,15 +52,20 @@ export default function ContactPage() {
       <div className="space-y-20 pb-24">
         <section className="mx-auto max-w-6xl px-6 pt-16">
           <div className="text-xs font-semibold tracking-[0.25em] uppercase" style={{ color: "var(--org-primary)" }}>
-            Contact
+            Hail The Studio
           </div>
           <h1 className="mt-4 text-5xl uppercase sm:text-7xl" style={{ fontFamily: "var(--font-display)" }}>
-            Brief us.
+            Send the brief.
+            <br />
+            We answer
+            <br />
+            in a day.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-[var(--text-secondary)]">
-            Tell us the brief, the date band, the venue or geography, and your scope. We&apos;ll come back inside one
-            business day with the engagement model, the producer assignment, and a price band — or a request for the
-            information we&apos;d need to scope it cleanly.
+            Tell us the brief, the date band, the venue or city, and the rough scope. One business day later
+            you&apos;ll have the engagement model, the producer assigned, and a price band — or a short list of
+            what we&apos;d need to scope it cleanly. We answer plain-English emails, six-hundred-line RFPs, and
+            2am voice memos with equal care. (We have favorites. We&apos;ll never tell.)
           </p>
         </section>
 
@@ -87,7 +92,7 @@ export default function ContactPage() {
         <section className="mx-auto max-w-6xl px-6">
           <div className="surface-raised p-8">
             <h2 className="text-2xl uppercase sm:text-3xl" style={{ fontFamily: "var(--font-display)" }}>
-              What to put in the email.
+              The six things to put in the email.
             </h2>
             <ul className="mt-6 grid gap-3 text-sm text-[var(--text-secondary)] sm:grid-cols-2">
               <li className="flex items-start gap-3">
