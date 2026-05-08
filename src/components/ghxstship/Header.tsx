@@ -16,20 +16,25 @@ import { Button } from "@/components/ui/Button";
 type NavLink = { label: string; href: string; description?: string };
 type NavGroup = { label: string; items: NavLink[] };
 
+/**
+ * Services dropdown — ordered by XTC class code (0000 → 9000), the same
+ * append-only sequence used in the catalog data layer and the footer.
+ * Class codes appear in the label so the menu reads like the codebook.
+ */
 const SERVICES: NavGroup = {
   label: "Services",
   items: [
     { label: "Full Catalog", href: "/services", description: "All 114 services" },
-    { label: "Production", href: "/services/production", description: "Audio, lighting, video, staging" },
-    { label: "Build", href: "/services/build", description: "Scenic, fabrication, install" },
-    { label: "Hospitality", href: "/services/hospitality", description: "F&B, VIP, premium service" },
-    { label: "Operations", href: "/services/operations", description: "Crew, logistics, security" },
-    { label: "Experience", href: "/services/experience", description: "Guest experience, retail" },
-    { label: "Technology", href: "/services/technology", description: "Networks, RFID, AR / VR" },
-    { label: "Executive", href: "/services/executive", description: "Permits, insurance, compliance" },
-    { label: "Creative", href: "/services/creative", description: "Design, art direction, IP" },
-    { label: "Marketing", href: "/services/marketing", description: "Ambassadors, donor programs" },
-    { label: "Talent", href: "/services/talent", description: "Performers, programming" },
+    { label: "0000 Executive", href: "/services/executive", description: "Permits, insurance, compliance" },
+    { label: "1000 Creative", href: "/services/creative", description: "Design, art direction, IP" },
+    { label: "2000 Talent", href: "/services/talent", description: "Performers, programming" },
+    { label: "3000 Marketing", href: "/services/marketing", description: "Ambassadors, donor programs" },
+    { label: "4000 Build", href: "/services/build", description: "Scenic, fabrication, install" },
+    { label: "5000 Production", href: "/services/production", description: "Audio, lighting, video, staging" },
+    { label: "6000 Operations", href: "/services/operations", description: "Crew, logistics, security" },
+    { label: "7000 Experience", href: "/services/experience", description: "Guest experience, retail" },
+    { label: "8000 Hospitality", href: "/services/hospitality", description: "F&B, VIP, premium service" },
+    { label: "9000 Technology", href: "/services/technology", description: "Networks, RFID, AR / VR" },
   ],
 };
 
