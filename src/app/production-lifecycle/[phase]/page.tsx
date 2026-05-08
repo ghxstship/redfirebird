@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ phase: st
   return {
     title: `${p.name} Phase — Production Services | GHXSTSHIP`,
     description: p.buyerIntent,
-    alternates: { canonical: `https://ghxstship.pro/phases/${p.slug}` },
+    alternates: { canonical: `https://ghxstship.pro/production-lifecycle/${p.slug}` },
   };
 }
 
@@ -42,7 +42,7 @@ export default async function PhaseDetail({ params }: { params: Promise<{ phase:
       <GhxstshipJsonLd
         data={breadcrumbSchema([
           { label: "GHXSTSHIP", href: "/" },
-          { label: "Phases", href: "/phases" },
+          { label: "Production Lifecycle", href: "/production-lifecycle" },
           { label: p.name, href: paths.phaseDetail(p.slug) },
         ])}
       />
@@ -50,7 +50,7 @@ export default async function PhaseDetail({ params }: { params: Promise<{ phase:
         <section className="mx-auto max-w-6xl px-6 pt-12">
           <nav className="mb-6 text-xs text-[var(--text-muted)]">
             <Link href={paths.phasesRoot()} className="hover:text-[var(--text-primary)]">
-              Phases
+              Production Lifecycle
             </Link>
             <span className="mx-2">/</span>
             <span className="text-[var(--text-primary)]">{p.name}</span>

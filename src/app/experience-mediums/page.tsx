@@ -7,10 +7,10 @@ import { GhxstshipJsonLd, breadcrumbSchema } from "@/components/ghxstship/JsonLd
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "Experience Modes — Social, Digital, Physical, Theatrical | GHXSTSHIP",
+  title: "Experience Mediums — Social, Digital, Physical, Theatrical | GHXSTSHIP",
   description:
-    "Six experience modes that classify what kind of experience the production delivers — social, digital, virtual, physical, experiential, theatrical.",
-  alternates: { canonical: "https://ghxstship.pro/tiers" },
+    "Six experience mediums classify what kind of experience the production delivers. Social, Digital, Virtual, Physical, Experiential, Theatrical. Most engagements span two or three; some span all six.",
+  alternates: { canonical: "https://ghxstship.pro/experience-mediums" },
 };
 
 export default function TiersHub() {
@@ -19,13 +19,13 @@ export default function TiersHub() {
       <GhxstshipJsonLd
         data={breadcrumbSchema([
           { label: "GHXSTSHIP", href: "/" },
-          { label: "Experience Modes", href: "/tiers" },
+          { label: "Experience Mediums", href: "/experience-mediums" },
         ])}
       />
       <div className="space-y-16 pb-24">
         <section className="mx-auto max-w-6xl px-6 pt-16">
           <div className="text-xs font-semibold tracking-[0.25em] uppercase" style={{ color: "var(--org-primary)" }}>
-            The Six Tiers Of Experience
+            The Six Experience Mediums
           </div>
           <h1 className="mt-4 text-5xl uppercase sm:text-7xl" style={{ fontFamily: "var(--font-display)" }}>
             How the audience

@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ tier: str
   return {
     title: `${t.name} Experiences — Production Services | GHXSTSHIP`,
     description: t.definition,
-    alternates: { canonical: `https://ghxstship.pro/tiers/${t.slug}` },
+    alternates: { canonical: `https://ghxstship.pro/experience-mediums/${t.slug}` },
   };
 }
 
@@ -33,7 +33,7 @@ export default async function TierDetail({ params }: { params: Promise<{ tier: s
       <GhxstshipJsonLd
         data={breadcrumbSchema([
           { label: "GHXSTSHIP", href: "/" },
-          { label: "Experience Modes", href: "/tiers" },
+          { label: "Experience Mediums", href: "/experience-mediums" },
           { label: t.name, href: paths.tierDetail(t.slug) },
         ])}
       />
@@ -41,7 +41,7 @@ export default async function TierDetail({ params }: { params: Promise<{ tier: s
         <section className="mx-auto max-w-6xl px-6 pt-12">
           <nav className="mb-6 text-xs text-[var(--text-muted)]">
             <Link href={paths.tiersRoot()} className="hover:text-[var(--text-primary)]">
-              Experience Modes
+              Experience Mediums
             </Link>
             <span className="mx-2">/</span>
             <span className="text-[var(--text-primary)]">{t.name}</span>
@@ -55,7 +55,7 @@ export default async function TierDetail({ params }: { params: Promise<{ tier: s
         {services.length > 0 ? (
           <section className="mx-auto max-w-6xl px-6">
             <div className="text-xs font-semibold tracking-[0.2em] text-[var(--text-muted)] uppercase">
-              {services.length} services anchor this experience mode
+              {services.length} services anchor this medium
             </div>
             <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {services.map((s) => {

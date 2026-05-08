@@ -25,8 +25,8 @@ const COLUMNS: Array<{ heading: string; items: Array<{ label: string; href: stri
     items: [
       { label: "About", href: paths.about() },
       { label: "Pricing", href: paths.pricing() },
-      { label: "Phases", href: paths.phasesRoot() },
-      { label: "Experience Modes", href: paths.tiersRoot() },
+      { label: "Production Lifecycle", href: paths.phasesRoot() },
+      { label: "Experience Mediums", href: paths.tiersRoot() },
       { label: "Contact", href: paths.contact() },
     ],
   },

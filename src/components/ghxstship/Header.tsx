@@ -65,9 +65,9 @@ const WORK: NavGroup = {
 const STUDIO: NavGroup = {
   label: "Studio",
   items: [
-    { label: "Phases", href: "/phases", description: "Discovery to Wrap" },
-    { label: "Experience Modes", href: "/tiers", description: "How audiences engage" },
-    { label: "Brand", href: "/brand", description: "Living guide" },
+    { label: "Production Lifecycle", href: "/production-lifecycle", description: "Discovery to Wrap" },
+    { label: "Experience Mediums", href: "/experience-mediums", description: "How audiences feel it" },
+    { label: "Brand Book", href: "/brand", description: "Live tokens, no PDF" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ],

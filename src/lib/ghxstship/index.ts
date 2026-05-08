@@ -46,11 +46,14 @@ export const paths = {
   solutionsRoot: () => "/solutions",
   solutionDetail: (slug: string) => `/solutions/${slug}`,
 
-  phasesRoot: () => "/phases",
-  phaseDetail: (slug: string) => `/phases/${slug}`,
+  // Variable names retained (`phasesRoot`, `phaseDetail`, `tiersRoot`,
+  // `tierDetail`) to keep call sites stable; URL strings updated to the
+  // canonical brand labels — Production Lifecycle and Experience Mediums.
+  phasesRoot: () => "/production-lifecycle",
+  phaseDetail: (slug: string) => `/production-lifecycle/${slug}`,
 
-  tiersRoot: () => "/tiers",
-  tierDetail: (slug: string) => `/tiers/${slug}`,
+  tiersRoot: () => "/experience-mediums",
+  tierDetail: (slug: string) => `/experience-mediums/${slug}`,
 
   marketsRoot: () => "/markets",
   marketDetail: (slug: string) => `/markets/${slug}`,

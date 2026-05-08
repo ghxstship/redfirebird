@@ -60,7 +60,7 @@ export default function SolutionsHub() {
             A theme park ride launch and a museum gala both touch scenic fabrication, but the compliance posture,
             the audience, the union jurisdiction, and the run-of-show share almost nothing. We don&apos;t pretend
             otherwise. Each industry page below lists every service anchored in that vertical — plus the phase
-            emphasis, the depth of detail, the experience modes, and where the work tends to land geographically.
+            emphasis, the depth of detail, the experience mediums, and where the work tends to land geographically.
             Pick yours and the producer behind it answers email.
           </p>
         </section>

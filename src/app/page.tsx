@@ -50,7 +50,7 @@ const PROOF_STATS = [
   { label: "Services", value: CATALOG_STATS.serviceCount, sub: "Disciplines on one ship" },
   { label: "Industries", value: CATALOG_STATS.solutionCount, sub: "Festivals to fan zones" },
   { label: "Markets", value: CATALOG_STATS.marketCount, sub: "Four anchors. Eight ports." },
-  { label: "Phases", value: CATALOG_STATS.phaseCount, sub: "Discovery to wrap" },
+  { label: "Production Lifecycle", value: CATALOG_STATS.phaseCount, sub: "Discovery to wrap" },
 ];
 
 const FEATURED_SOLUTIONS = [
@@ -77,7 +77,7 @@ const FAQS = [
   },
   {
     q: "Do you handle production end to end, or just one phase?",
-    a: "Both. Eight production phases — Discovery, Concept, Develop, Advance, Build, Show, Strike, Wrap — engage across all of them or pick a subset. Per-project tiers are scoped to a single brief. Retainers run continuously. We've called shows we didn't engineer; we've engineered shows we didn't call. We work where the work needs us.",
+    a: "Both. The Production Lifecycle is eight phases long — Discovery, Concept, Develop, Advance, Build, Show, Strike, Wrap. Engage across all of them or pick a subset. Per-project tiers are scoped to a single brief; retainers run continuously. We've called shows we didn't engineer and engineered shows we didn't call. We work where the work needs us.",
   },
   {
     q: "Who owns the IP and the deliverables when you wrap?",
@@ -363,14 +363,14 @@ export default function GhxstshipHome() {
               href={paths.phasesRoot()}
               className="text-sm font-semibold tracking-wide uppercase hover:text-[var(--org-primary)]"
             >
-              All eight phases →
+              The full Lifecycle →
             </Link>
           </div>
           <p className="mt-4 max-w-2xl text-sm text-[var(--text-secondary)]">
-            The Eight Production Phases (8PP) — Discovery through Wrap — are the temporal spine of every engagement
-            we run. Each phase carries milestones, deliverables, and an approval gate that has to close before we
-            move. The cards below assume a 12-week per-project engagement; the artifact lands at the top of every
-            signed proposal.
+            The Production Lifecycle is eight phases long — Discovery through Wrap — and it&apos;s the temporal
+            spine of every engagement we run. Each phase carries milestones, deliverables, and an approval gate
+            that has to close before we move. The cards below assume a 12-week per-project engagement; the
+            artifact lands at the top of every signed proposal.
           </p>
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {LIFECYCLE.slice(0, 4).map((phase) => (
@@ -396,7 +396,7 @@ export default function GhxstshipHome() {
             </div>
             <p className="text-[var(--text-secondary)]">
               The XPMS indexes every transactable atom along five orthogonal axes — class, phase, level of detail,
-              experience mode, industry — plus geography. Pull any thread and you land on a real producer with a
+              experience medium, industry — plus geography. Pull any thread and you land on a real producer with a
               real portfolio. There&apos;s no marketing layer between you and the work.
             </p>
           </div>
@@ -412,8 +412,8 @@ export default function GhxstshipHome() {
             <AxisCard
               icon={<Clock3 className="h-5 w-5" />}
               count={CATALOG_STATS.phaseCount}
-              title="Phases"
-              blurb="Discovery, Concept, Develop, Advance, Build, Show, Strike, Wrap. The 8PP — engage end to end or just the phase you need lifted."
+              title="Production Lifecycle"
+              blurb="Discovery, Concept, Develop, Advance, Build, Show, Strike, Wrap. Eight phases — engage end to end or just the phase you need lifted."
               href={paths.phasesRoot()}
             />
             <AxisCard
@@ -426,8 +426,8 @@ export default function GhxstshipHome() {
             <AxisCard
               icon={<Hexagon className="h-5 w-5" />}
               count={CATALOG_STATS.tierCount}
-              title="Experience Modes"
-              blurb="Social, Digital, Virtual, Physical, Experiential, Theatrical. The Six Tiers — most engagements span two or three. Some span all six."
+              title="Experience Mediums"
+              blurb="Social, Digital, Virtual, Physical, Experiential, Theatrical. The Six Mediums — most engagements span two or three. Some span all six."
               href={paths.tiersRoot()}
             />
             <AxisCard

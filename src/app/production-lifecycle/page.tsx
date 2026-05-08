@@ -7,10 +7,10 @@ import { GhxstshipJsonLd, breadcrumbSchema } from "@/components/ghxstship/JsonLd
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "Production Phases — Discovery to Wrap | GHXSTSHIP",
+  title: "Production Lifecycle — Discovery to Wrap | GHXSTSHIP",
   description:
-    "Eight production phases. Discovery, Concept, Develop, Advance, Build, Show, Strike, Wrap. Engage across the full lifecycle or any subset.",
-  alternates: { canonical: "https://ghxstship.pro/phases" },
+    "The Eight Production Phases — Discovery, Concept, Develop, Advance, Build, Show, Strike, Wrap. The temporal spine of every engagement. Engage across the full lifecycle or hire us into a single phase.",
+  alternates: { canonical: "https://ghxstship.pro/production-lifecycle" },
 };
 
 export default function PhasesHub() {
@@ -19,7 +19,7 @@ export default function PhasesHub() {
       <GhxstshipJsonLd
         data={breadcrumbSchema([
           { label: "GHXSTSHIP", href: "/" },
-          { label: "Phases", href: "/phases" },
+          { label: "Production Lifecycle", href: "/production-lifecycle" },
         ])}
       />
       <div className="space-y-16 pb-24">
