@@ -2,9 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight } from "lucide-react";
-import { PHASES, PHASE_BY_SLUG, CLASS_BY_CODE, resolveServices, paths } from "@/lib/ghxstship";
+import {
+  PHASES,
+  PHASE_BY_SLUG,
+  CLASS_BY_CODE,
+  resolveServices,
+  paths,
+  LIFECYCLE_BY_SLUG,
+} from "@/lib/ghxstship";
 import type { PhaseSlug } from "@/lib/ghxstship/types";
 import { GhxstshipJsonLd, breadcrumbSchema } from "@/components/ghxstship/JsonLd";
+import { LifecyclePhaseCard } from "@/components/ghxstship/LifecyclePhaseCard";
 
 export const dynamic = "force-static";
 
@@ -57,9 +65,28 @@ export default async function PhaseDetail({ params }: { params: Promise<{ phase:
         <section className="mx-auto max-w-6xl px-6">
           <div className="surface p-6">
             <div className="text-xs font-semibold tracking-[0.18em] uppercase" style={{ color: "var(--org-primary)" }}>
-              What happens in this phase
+              What Happens In This Phase
             </div>
             <p className="mt-3 text-[var(--text-secondary)]">{p.whatHappens}</p>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-6xl px-6">
+          <div className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: "var(--org-primary)" }}>
+            Anatomy. Window. Gate.
+          </div>
+          <h2 className="mt-3 text-3xl uppercase sm:text-4xl" style={{ fontFamily: "var(--font-display)" }}>
+            What this phase looks like
+            <br />
+            on a real engagement.
+          </h2>
+          <p className="mt-3 max-w-2xl text-[var(--text-secondary)]">
+            Sample window for a typical 12-week per-project engagement. Real engagements bind real dates against the
+            same anatomy: milestones, deliverables, and an approval gate that must close before the next phase can
+            begin.
+          </p>
+          <div className="mt-6">
+            <LifecyclePhaseCard phase={LIFECYCLE_BY_SLUG[p.slug]} linked={false} />
           </div>
         </section>
 

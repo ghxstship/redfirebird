@@ -4,6 +4,8 @@ import { Check, Users } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { PROJECT_TIERS, RETAINER_TIERS, ADD_ONS, paths } from "@/lib/ghxstship";
 import { GhxstshipJsonLd, breadcrumbSchema, faqSchema } from "@/components/ghxstship/JsonLd";
+import { EngagementBar } from "@/components/ghxstship/EngagementBar";
+import { WorkbackTable } from "@/components/ghxstship/WorkbackTable";
 
 export const dynamic = "force-static";
 
@@ -76,6 +78,9 @@ export default function PricingPage() {
             path. Production costs pass through at cost.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
+            <Link href="#sample" className="btn btn-secondary btn-sm">
+              Sample Engagement
+            </Link>
             <Link href="#per-project" className="btn btn-secondary btn-sm">
               Per-Project
             </Link>
@@ -85,6 +90,30 @@ export default function PricingPage() {
             <Link href="#add-ons" className="btn btn-secondary btn-sm">
               Add-Ons
             </Link>
+            <Link href="#workback" className="btn btn-secondary btn-sm">
+              Workback
+            </Link>
+          </div>
+        </section>
+
+        {/* SAMPLE ENGAGEMENT — proposal-shape engagement bar */}
+        <section id="sample" className="mx-auto max-w-6xl px-6 scroll-mt-24">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <div className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: "var(--org-primary)" }}>
+                Sample Engagement
+              </div>
+              <h2 className="mt-3 text-4xl uppercase sm:text-5xl" style={{ fontFamily: "var(--font-display)" }}>
+                The bar above every proposal.
+              </h2>
+            </div>
+            <p className="max-w-xl text-sm text-[var(--text-secondary)]">
+              Real engagements bind real numbers — a Run-tier sample below. Same five-cell anatomy lands at the top
+              of every signed scope of work, so the shape we send is the shape we showed.
+            </p>
+          </div>
+          <div className="mt-8">
+            <EngagementBar />
           </div>
         </section>
 
@@ -274,6 +303,27 @@ export default function PricingPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* WORKBACK SCHEDULE — proposal-shape sample timeline */}
+        <section id="workback" className="mx-auto max-w-6xl px-6 scroll-mt-24">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <div className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: "var(--org-primary)" }}>
+                Workback Schedule
+              </div>
+              <h2 className="mt-3 text-4xl uppercase sm:text-5xl" style={{ fontFamily: "var(--font-display)" }}>
+                What twelve weeks looks like.
+              </h2>
+            </div>
+            <p className="max-w-xl text-sm text-[var(--text-secondary)]">
+              A sample milestone-by-week workback for a Run-tier engagement. Real engagements bind real dates against
+              the same shape — the same workback table closes every signed proposal.
+            </p>
+          </div>
+          <div className="mt-8">
+            <WorkbackTable />
           </div>
         </section>
 

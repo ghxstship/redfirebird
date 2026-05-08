@@ -1,9 +1,22 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Layers, Compass, Clock3, Building2, Hexagon, MapPin } from "lucide-react";
+import { ArrowRight, Layers, Compass, Clock3, Building2, Hexagon, MapPin, Bookmark } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { CATALOG_STATS, CLASSES, SOLUTIONS, ANCHOR_MARKETS, paths } from "@/lib/ghxstship";
+import {
+  CATALOG_STATS,
+  CLASSES,
+  SOLUTIONS,
+  ANCHOR_MARKETS,
+  paths,
+  IN_FLIGHT_ISSUES,
+  SHIPPED_ISSUES,
+  UPCOMING_ISSUES,
+  SAGA_BY_SLUG,
+  LIFECYCLE,
+} from "@/lib/ghxstship";
 import { GhxstshipJsonLd, organizationSchema, serviceSchema, faqSchema } from "@/components/ghxstship/JsonLd";
+import { LifecyclePhaseCard } from "@/components/ghxstship/LifecyclePhaseCard";
+import { BrandMarkCeremony } from "@/components/ghxstship/BrandMarkCeremony";
 
 export const dynamic = "force-static";
 
@@ -100,6 +113,7 @@ export default function GhxstshipHome() {
         ]}
       />
 
+      <BrandMarkCeremony />
       <div className="space-y-24 pb-24">
         {/* HERO */}
         <section className="mx-auto max-w-6xl px-6 pt-20 pb-12">
@@ -156,12 +170,203 @@ export default function GhxstshipHome() {
           </div>
         </section>
 
+        {/* PROJECT OVERVIEW PAIR — proposal-shape Identity + Engagement */}
+        <section className="mx-auto max-w-6xl px-6">
+          <div className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: "var(--org-primary)" }}>
+            The Studio. The Engagement. The Receipt.
+          </div>
+          <h2 className="mt-3 text-4xl uppercase sm:text-5xl" style={{ fontFamily: "var(--font-display)" }}>
+            Who we are. How we work.
+          </h2>
+          <div className="mt-8 grid gap-5 md:grid-cols-2">
+            <div className="surface-raised p-8">
+              <div className="text-[11px] font-semibold tracking-[0.18em] uppercase" style={{ color: "var(--org-primary)" }}>
+                Studio Identity
+              </div>
+              <h3 className="mt-3 text-2xl uppercase sm:text-3xl" style={{ fontFamily: "var(--font-display)" }}>
+                GHXSTSHIP Industries.
+              </h3>
+              <p className="mt-3 text-sm text-[var(--text-secondary)]">
+                Experiential production company. Built ATLVS so we&apos;d stop running production on spreadsheets;
+                run every engagement on the same operating system that publishes this catalog. Anchored Miami, New
+                York, Chicago, Los Angeles. Eight satellites. National + international tiers from any anchor.
+              </p>
+              <ul className="mt-4 space-y-1.5 text-xs">
+                <li className="flex items-start gap-2 text-[var(--text-secondary)]">
+                  <span className="mt-1 inline-block h-1 w-1" style={{ background: "var(--org-accent)" }} />
+                  <span>Full-time producers, A1s, L1s, V1s, riggers, hospitality leads, federation liaisons.</span>
+                </li>
+                <li className="flex items-start gap-2 text-[var(--text-secondary)]">
+                  <span className="mt-1 inline-block h-1 w-1" style={{ background: "var(--org-accent)" }} />
+                  <span>PE-stamped engineering where it matters. NFPA 701, IATSE, USCG, IMO posture in-house.</span>
+                </li>
+                <li className="flex items-start gap-2 text-[var(--text-secondary)]">
+                  <span className="mt-1 inline-block h-1 w-1" style={{ background: "var(--org-accent)" }} />
+                  <span>Sustainability + ESG measurement on every engagement, sponsor-ready by Wrap.</span>
+                </li>
+              </ul>
+            </div>
+            <div className="surface-raised p-8">
+              <div className="text-[11px] font-semibold tracking-[0.18em] uppercase" style={{ color: "var(--org-primary)" }}>
+                Engagement Approach
+              </div>
+              <h3 className="mt-3 text-2xl uppercase sm:text-3xl" style={{ fontFamily: "var(--font-display)" }}>
+                Per-Project. Or On Retainer.
+              </h3>
+              <p className="mt-3 text-sm text-[var(--text-secondary)]">
+                Per-Project for a single brief — five tiers from a one-night activation to a multi-year mega-event.
+                Retainer for ongoing programs — four bundles built around team composition. Add-ons stack on either
+                path. Production costs pass through at cost.
+              </p>
+              <ul className="mt-4 space-y-1.5 text-xs">
+                <li className="flex items-start gap-2 text-[var(--text-secondary)]">
+                  <span className="mt-1 inline-block h-1 w-1" style={{ background: "var(--org-accent)" }} />
+                  <span>60% professional fee on signature, 40% at load-in. Phase-gated SOW, change-order framework.</span>
+                </li>
+                <li className="flex items-start gap-2 text-[var(--text-secondary)]">
+                  <span className="mt-1 inline-block h-1 w-1" style={{ background: "var(--org-accent)" }} />
+                  <span>Reply within one business day with engagement model, producer assignment, price band.</span>
+                </li>
+                <li className="flex items-start gap-2 text-[var(--text-secondary)]">
+                  <span className="mt-1 inline-block h-1 w-1" style={{ background: "var(--org-accent)" }} />
+                  <span>Same data model end to end — proposal, console, portal, field app, wrap report.</span>
+                </li>
+              </ul>
+              <div className="mt-5 flex flex-wrap items-center gap-2">
+                <Link href={paths.pricing()} className="btn btn-secondary btn-sm">
+                  Pricing &amp; Retainers
+                </Link>
+                <Link href={paths.contact()} className="btn btn-primary btn-sm">
+                  Brief the Studio
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FEATURED ISSUE — saga-affiliated, spotlight-overlaid */}
+        {(IN_FLIGHT_ISSUES[0] || SHIPPED_ISSUES[0]) && (() => {
+          const featured = IN_FLIGHT_ISSUES[0] ?? SHIPPED_ISSUES[0];
+          const upcoming = UPCOMING_ISSUES[0];
+          return (
+            <section className="mx-auto max-w-6xl px-6">
+              <div className="flex flex-wrap items-end justify-between gap-3">
+                <div>
+                  <div
+                    className="text-xs font-semibold tracking-[0.2em] uppercase"
+                    style={{ color: "var(--org-primary)" }}
+                  >
+                    Issues. Sagas. Receipts.
+                  </div>
+                  <h2 className="mt-3 text-4xl uppercase sm:text-5xl" style={{ fontFamily: "var(--font-display)" }}>
+                    Numbered. Append-only.
+                  </h2>
+                </div>
+                <Link
+                  href={paths.issuesRoot()}
+                  className="text-sm font-semibold tracking-wide uppercase hover:text-[var(--org-primary)]"
+                >
+                  All issues →
+                </Link>
+              </div>
+              <div className="mt-8 grid gap-5 lg:grid-cols-3">
+                <Link
+                  href={paths.issueDetail(featured.slug)}
+                  data-spotlight={featured.spotlight}
+                  className="surface hover-lift group flex h-full flex-col p-8 lg:col-span-2"
+                >
+                  <div className="flex items-baseline justify-between gap-3">
+                    <span
+                      className="font-mono text-xs tracking-[0.18em] uppercase"
+                      style={{ color: "var(--org-primary)" }}
+                    >
+                      Issue {featured.number} · {SAGA_BY_SLUG[featured.saga].name}
+                    </span>
+                    <span className="font-mono text-[10px] uppercase text-[var(--text-muted)]">
+                      {featured.year} · {featured.market}
+                    </span>
+                  </div>
+                  <h3
+                    className="mt-3 text-3xl uppercase sm:text-4xl"
+                    style={{ fontFamily: "var(--font-display)" }}
+                  >
+                    {featured.title}
+                  </h3>
+                  <p className="mt-4 text-base text-[var(--text-secondary)]">{featured.thesis}</p>
+                  <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold tracking-wide uppercase">
+                    Read the issue
+                    <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+                  </div>
+                </Link>
+                {upcoming && (
+                  <div data-spotlight={upcoming.spotlight} className="surface flex h-full flex-col p-6">
+                    <div className="flex items-center gap-2">
+                      <Bookmark className="h-3.5 w-3.5" style={{ color: "var(--org-primary)" }} />
+                      <span
+                        className="font-mono text-[10px] tracking-[0.2em] uppercase"
+                        style={{ color: "var(--org-primary)" }}
+                      >
+                        On The Slate
+                      </span>
+                    </div>
+                    <div className="mt-4 font-mono text-xs tracking-[0.18em] uppercase text-[var(--text-muted)]">
+                      Issue {upcoming.number} · {upcoming.year}
+                    </div>
+                    <h3 className="mt-2 text-xl uppercase" style={{ fontFamily: "var(--font-display)" }}>
+                      {upcoming.title}
+                    </h3>
+                    <p className="mt-3 line-clamp-4 text-xs text-[var(--text-secondary)]">{upcoming.thesis}</p>
+                    <Link
+                      href={paths.issueDetail(upcoming.slug)}
+                      className="mt-auto pt-4 text-xs font-semibold tracking-wide uppercase hover:text-[var(--org-primary)]"
+                    >
+                      Tease →
+                    </Link>
+                  </div>
+                )}
+              </div>
+            </section>
+          );
+        })()}
+
+        {/* LIFECYCLE PREVIEW — proposal-shape phase cards */}
+        <section className="mx-auto max-w-6xl px-6">
+          <div className="flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <div className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: "var(--org-primary)" }}>
+                Discovery. Concept. Develop. Show.
+              </div>
+              <h2 className="mt-3 text-4xl uppercase sm:text-5xl" style={{ fontFamily: "var(--font-display)" }}>
+                The same eight phases.
+                <br />
+                Every engagement.
+              </h2>
+            </div>
+            <Link
+              href={paths.phasesRoot()}
+              className="text-sm font-semibold tracking-wide uppercase hover:text-[var(--org-primary)]"
+            >
+              All eight phases →
+            </Link>
+          </div>
+          <p className="mt-4 max-w-2xl text-sm text-[var(--text-secondary)]">
+            Sample windows below assume a typical 12-week per-project engagement. Each phase carries milestones,
+            deliverables, and an approval gate that must close before the next phase begins. Same artifact lands at
+            the top of every signed proposal.
+          </p>
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {LIFECYCLE.slice(0, 4).map((phase) => (
+              <LifecyclePhaseCard key={phase.slug} phase={phase} />
+            ))}
+          </div>
+        </section>
+
         {/* WHAT WE DO */}
         <section className="mx-auto max-w-6xl px-6">
           <div className="grid items-end gap-6 md:grid-cols-2">
             <div>
               <div className="text-xs font-semibold tracking-[0.2em] uppercase" style={{ color: "var(--org-primary)" }}>
-                What We Do
+                Search. Browse. Brief.
               </div>
               <h2 className="mt-3 text-4xl uppercase sm:text-5xl" style={{ fontFamily: "var(--font-display)" }}>
                 Six ways to find

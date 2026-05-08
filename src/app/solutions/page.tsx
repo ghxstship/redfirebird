@@ -49,10 +49,13 @@ export default function SolutionsHub() {
             Industries
           </div>
           <h1 className="mt-4 text-5xl uppercase sm:text-7xl" style={{ fontFamily: "var(--font-display)" }}>
-            {CATALOG_STATS.solutionCount} verticals.
+            Festivals. Fan Zones.
             <br />
-            One studio.
+            Theme Parks. Theatres.
           </h1>
+          <div className="mt-4 font-mono text-xs tracking-[0.2em] uppercase text-[var(--text-muted)]">
+            {CATALOG_STATS.solutionCount} industries · one studio · one playbook
+          </div>
           <p className="mt-6 max-w-2xl text-lg text-[var(--text-secondary)]">
             Different industries draw on different services. A theme park ride launch and a museum gala both touch
             scenic fabrication, but the compliance posture, the audience, and the run-of-show look nothing alike. Browse

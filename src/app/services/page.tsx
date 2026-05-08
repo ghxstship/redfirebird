@@ -50,12 +50,14 @@ export default function ServicesHub() {
             Services Catalog
           </div>
           <h1 className="mt-4 text-5xl uppercase sm:text-7xl" style={{ fontFamily: "var(--font-display)" }}>
-            {CATALOG_STATS.serviceCount} services.
+            Drawn. Built.
             <br />
-            {CATALOG_STATS.classCount} disciplines.
-            <br />
-            Real producers behind every line.
+            Printed. Installed.
           </h1>
+          <div className="mt-4 font-mono text-xs tracking-[0.2em] uppercase text-[var(--text-muted)]">
+            {CATALOG_STATS.serviceCount} services · {CATALOG_STATS.classCount} disciplines · real producers behind
+            every line
+          </div>
           <p className="mt-6 max-w-2xl text-lg text-[var(--text-secondary)]">
             Each service is a real, scoped, priceable line of work — not a marketing buzzword. Browse by discipline
             below, or jump straight to the industry vertical you&apos;re in. Every service detail page tells you what it

@@ -15,6 +15,9 @@ export * from "./markets";
 export * from "./solutions";
 export * from "./services";
 export * from "./pricing";
+export * from "./spotlights";
+export * from "./issues";
+export * from "./lifecycle";
 
 import { SERVICES, SERVICE_BY_NUMBER, servicesByClass, servicesByPhase } from "./services";
 import { CLASSES, CLASS_BY_CODE, CLASS_BY_SLUG } from "./classes";
@@ -51,6 +54,14 @@ export const paths = {
 
   marketsRoot: () => "/markets",
   marketDetail: (slug: string) => `/markets/${slug}`,
+
+  issuesRoot: () => "/issues",
+  issueDetail: (slug: string) => `/issues/${slug}`,
+
+  sagaRoot: () => "/sagas",
+  sagaDetail: (slug: string) => `/sagas/${slug}`,
+
+  brand: () => "/brand",
 };
 
 export const CATALOG_STATS = {

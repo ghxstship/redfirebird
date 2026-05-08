@@ -48,18 +48,27 @@ const INDUSTRIES: NavGroup = {
   ],
 };
 
+const WORK: NavGroup = {
+  label: "Work",
+  items: [
+    { label: "Issues", href: "/issues", description: "Numbered case studies" },
+    { label: "Sagas", href: "/issues", description: "Multi-year arcs" },
+    { label: "Markets", href: "/markets", description: "12 cities, 4 anchors" },
+  ],
+};
+
 const STUDIO: NavGroup = {
   label: "Studio",
   items: [
     { label: "Phases", href: "/phases", description: "Discovery to Wrap" },
     { label: "Experience Modes", href: "/tiers", description: "How audiences engage" },
-    { label: "Markets", href: "/markets", description: "12 cities, 4 anchors" },
+    { label: "Brand", href: "/brand", description: "Living guide" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ],
 };
 
-const ALL_GROUPS = [SERVICES, INDUSTRIES, STUDIO];
+const ALL_GROUPS = [SERVICES, INDUSTRIES, WORK, STUDIO];
 
 function DesktopGroup({ group }: { group: NavGroup }) {
   return (
