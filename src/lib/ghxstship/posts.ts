@@ -43,7 +43,7 @@ When a project goes sideways, it's usually because someone shortcut a phase gate
 
 ## Where it came from
 
-The eight-phase lifecycle replaces what we used to call the 7 D's. We restructured it to put Compliance and Risk Management explicitly between Creative Design and Production and Build — too many projects were closing creative without the engineering and permitting cleared, then carrying that risk into the fabrication shop. The new Phase 04 fixes that.
+The eight-phase lifecycle replaces the older 7-D methodology that GHXSTSHIP and its sister practices ran for years. We restructured it to put Compliance and Risk Management explicitly between Creative Design and Production and Build — too many projects were closing creative without the engineering and permitting cleared, then carrying that risk into the fabrication shop. The new Phase 04 fixes that.
 
 The full lifecycle spec is mirrored in ATLVS, COMPVSS, and GVTEWAY — the platforms run the same phase gates the producers run. There's no parallel system. The lifecycle is the methodology, and the technology runs it.
 

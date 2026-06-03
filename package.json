@@ -1,8 +1,8 @@
 {
-  "name": "redfirebird",
-  "version": "0.1.0",
+  "name": "ghxstship",
+  "version": "1.0.0",
   "private": true,
-  "description": "GHXSTSHIP Industries — experiential production company. XPMS-aligned services catalog at ghxstship.pro.",
+  "description": "GHXSTSHIP — Venture Beyond. A full-service experiential production, operations, and technology company headquartered in Miami, with offices in New York, Chicago, and Los Angeles. Marketing site at ghxstship.tours.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -12,8 +12,6 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@radix-ui/react-dropdown-menu": "^2.1.16",
-    "lucide-react": "^0.469.0",
     "next": "16.2.4",
     "react": "19.2.4",
     "react-dom": "19.2.4"
