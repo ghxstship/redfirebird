@@ -71,11 +71,11 @@
   --danger:  #F23A2F;
   --info:    #21D4D4;
 
-  /* TYPE — families are filled in by next/font in layout.tsx, with fallbacks here */
-  --font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
-  --font-body:    "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
-  --font-pixel:   "Silkscreen", "Space Mono", monospace;
-  --font-mono:    "Space Mono", "SF Mono", ui-monospace, monospace;
+  /* TYPE — primary value is next/font's loaded variable; fallback for SSR/no-JS */
+  --font-display: var(--font-display-loaded), "Big Shoulders", "Arial Narrow", sans-serif;
+  --font-body:    var(--font-body-loaded),    "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-pixel:   var(--font-pixel-loaded),   "Silkscreen", "Space Mono", monospace;
+  --font-mono:    var(--font-mono-loaded),    "Space Mono", "SF Mono", ui-monospace, monospace;
 
   /* TYPE SCALE */
   --fs-display-xl: 112px; --lh-display-xl: 0.90;
@@ -128,7 +128,9 @@ html.hero-mode {
 
 /* ─────── base ─────── */
 *{box-sizing:border-box}
-html,body{margin:0;background:var(--void);color:var(--bone);font-family:var(--font-body);overflow-x:hidden;-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+/* overflow-x:hidden on html only — putting it on body breaks position:sticky descendants */
+html{overflow-x:hidden;scroll-behavior:smooth}
+html,body{margin:0;background:var(--void);color:var(--bone);font-family:var(--font-body);-webkit-font-smoothing:antialiased}
 a{color:inherit}
 .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
 .skip{position:absolute;left:-999px}

@@ -10,25 +10,25 @@ import "./globals.css";
 const display = Big_Shoulders({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
-  variable: "--font-display",
+  variable: "--font-display-loaded",
   display: "swap",
 });
 const body = Space_Grotesk({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-body",
+  variable: "--font-body-loaded",
   display: "swap",
 });
 const mono = Space_Mono({
   subsets: ["latin"],
   weight: ["400", "700"],
-  variable: "--font-mono",
+  variable: "--font-mono-loaded",
   display: "swap",
 });
 const pixel = Silkscreen({
   subsets: ["latin"],
   weight: ["400", "700"],
-  variable: "--font-pixel",
+  variable: "--font-pixel-loaded",
   display: "swap",
 });
 
