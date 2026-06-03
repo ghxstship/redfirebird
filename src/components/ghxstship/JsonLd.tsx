@@ -49,7 +49,7 @@ const organizationSchema = {
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "GHXSTSHIP Destinations",
-    itemListElement: DESTINATIONS.filter((d) => !d.final).map((d) => ({
+    itemListElement: DESTINATIONS.map((d) => ({
       "@type": "Offer",
       itemOffered: { "@type": "Service", name: d.name },
     })),
@@ -67,6 +67,7 @@ const howToSchema = {
     position: i + 1,
     name: phase.name,
     text: phase.sub,
+    url: `${ORG.url}itinerary/${phase.slug}`,
   })),
 };
 
@@ -75,9 +76,10 @@ const softwareSchema = {
   "@graph": INSTRUMENTS.map((inst) => ({
     "@type": "SoftwareApplication",
     name: inst.title,
-    applicationCategory: "BusinessApplication",
+    applicationCategory: inst.applicationCategory,
     operatingSystem: "Web",
-    description: inst.blurb,
+    description: inst.shortBlurb,
+    url: `${ORG.url}bridge/${inst.slug}`,
     publisher: { "@type": "Organization", name: "GHXSTSHIP" },
   })),
 };
@@ -89,7 +91,13 @@ const itemListSchema = {
   itemListElement: VOYAGES.map((v, i) => ({
     "@type": "ListItem",
     position: i + 1,
-    item: { "@type": "CreativeWork", name: v.name, about: v.meta, datePublished: v.year },
+    item: {
+      "@type": "CreativeWork",
+      name: v.name,
+      about: v.about,
+      datePublished: v.year,
+      url: `${ORG.url}voyages/${v.slug}`,
+    },
   })),
 };
 
@@ -103,8 +111,20 @@ const faqSchema = {
   })),
 };
 
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: ORG.name,
+  url: ORG.url,
+  potentialAction: {
+    "@type": "SearchAction",
+    target: { "@type": "EntryPoint", urlTemplate: `${ORG.url}voyages?q={search_term_string}` },
+    "query-input": "required name=search_term_string",
+  },
+};
+
 export function JsonLd() {
-  const blocks = [organizationSchema, howToSchema, softwareSchema, itemListSchema, faqSchema];
+  const blocks = [organizationSchema, websiteSchema, howToSchema, softwareSchema, itemListSchema, faqSchema];
   return (
     <>
       {blocks.map((b, i) => (

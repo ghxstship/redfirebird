@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { PRIMARY_NAV } from "@/lib/ghxstship";
 
@@ -9,7 +10,7 @@ export function Header() {
   return (
     <header className="nav">
       <div className="wrap nav-inner">
-        <a className="brand" href="#" aria-label="GHXSTSHIP home">
+        <Link className="brand" href="/" aria-label="GHXSTSHIP home">
           <Image
             src="/assets/skull-bone.svg"
             alt="GHXSTSHIP ghost-ship logo"
@@ -18,7 +19,7 @@ export function Header() {
             priority
           />
           <b>G H X S T S H I P</b>
-        </a>
+        </Link>
         <button
           className="navtoggle"
           aria-label="Menu"
@@ -29,18 +30,18 @@ export function Header() {
         </button>
         <nav className={`navlinks${open ? " open" : ""}`} aria-label="Primary">
           {PRIMARY_NAV.map((item) => (
-            <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
+            <Link key={item.href} href={item.href} onClick={() => setOpen(false)}>
               {item.label}
-            </a>
+            </Link>
           ))}
-          <a
+          <Link
             className="gx-btn gx-btn--nebula gx-btn--sm"
-            href="#book"
+            href="/contact"
             style={{ color: "var(--bone)" }}
             onClick={() => setOpen(false)}
           >
             Book Now ↗
-          </a>
+          </Link>
         </nav>
       </div>
     </header>

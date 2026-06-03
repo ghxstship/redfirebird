@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import { ORG, FOOTER_NAV } from "@/lib/ghxstship";
 
@@ -7,9 +8,9 @@ export function Footer() {
       <div className="wrap">
         <div className="foot-grid">
           <div className="foot-brand">
-            <a
+            <Link
               className="brand"
-              href="#"
+              href="/"
               style={{ marginBottom: 14 }}
               aria-label="GHXSTSHIP home"
             >
@@ -21,7 +22,7 @@ export function Footer() {
                 style={{ imageRendering: "pixelated" }}
               />
               <b>G H X S T S H I P</b>
-            </a>
+            </Link>
             <p
               style={{
                 fontFamily: "var(--font-display)",
@@ -54,51 +55,61 @@ export function Footer() {
               </a>
             </div>
             <div className="foot-social">
-              <a href="#" aria-label="Instagram"><i className="ph-bold ph-instagram-logo" /></a>
-              <a href="#" aria-label="LinkedIn"><i className="ph-bold ph-linkedin-logo" /></a>
-              <a href="#" aria-label="YouTube"><i className="ph-bold ph-youtube-logo" /></a>
-              <a href="#" aria-label="TikTok"><i className="ph-bold ph-tiktok-logo" /></a>
+              <a href="https://instagram.com/ghxstship" aria-label="Instagram" rel="noopener noreferrer" target="_blank">
+                <i className="ph-bold ph-instagram-logo" />
+              </a>
+              <a href="https://linkedin.com/company/ghxstship" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank">
+                <i className="ph-bold ph-linkedin-logo" />
+              </a>
+              <a href="https://youtube.com/@ghxstship" aria-label="YouTube" rel="noopener noreferrer" target="_blank">
+                <i className="ph-bold ph-youtube-logo" />
+              </a>
+              <a href="https://tiktok.com/@ghxstship" aria-label="TikTok" rel="noopener noreferrer" target="_blank">
+                <i className="ph-bold ph-tiktok-logo" />
+              </a>
             </div>
           </div>
           <nav aria-label="Destinations">
             <h5>Destinations</h5>
-            {FOOTER_NAV.destinations.map((label) => (
-              <a key={label} href="#destinations">
-                {label}
-              </a>
+            {FOOTER_NAV.destinations.map((l) => (
+              <Link key={l.label} href={l.href}>
+                {l.label}
+              </Link>
             ))}
           </nav>
           <nav aria-label="Charters">
             <h5>Charters</h5>
             {FOOTER_NAV.charters.map((l) => (
-              <a key={l.label} href={l.href}>
+              <Link key={l.label} href={l.href}>
                 {l.label}
-              </a>
+              </Link>
             ))}
           </nav>
           <nav aria-label="Company">
             <h5>Company</h5>
             {FOOTER_NAV.company.map((l) => (
-              <a key={l.label} href={l.href}>
+              <Link key={l.label} href={l.href}>
                 {l.label}
-              </a>
+              </Link>
             ))}
           </nav>
           <nav aria-label="Get Started">
             <h5>Get Started</h5>
             {FOOTER_NAV.getStarted.map((l) => (
-              <a key={l.label} href={l.href}>
+              <Link key={l.label} href={l.href}>
                 {l.label}
-              </a>
+              </Link>
             ))}
           </nav>
         </div>
         <div className="foot-bot">
           <span>© 2026 G H X S T S H I P INDUSTRIES LLC. ALL RIGHTS RESERVED.</span>
           <span className="foot-legal">
-            <a href="#">Privacy</a>
-            <a href="#">Terms</a>
-            <a href="#">Confidentiality</a>
+            {FOOTER_NAV.legal.map((l) => (
+              <Link key={l.label} href={l.href}>
+                {l.label}
+              </Link>
+            ))}
             <a className="foot-totop" href="#main">Back to top ↑</a>
           </span>
         </div>

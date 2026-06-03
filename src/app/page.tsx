@@ -1,20 +1,23 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Image from "next/image";
 import {
   ORG,
   BOOKING_STEPS,
   TRUSTED,
   MARQUEE,
-  DESTINATIONS,
-  CHARTERS,
+  DESTINATION_CARDS,
+  CHARTERS_HOME,
   ITINERARY,
   DIFFERENCE,
-  INSTRUMENTS,
-  CREW,
-  VOYAGES,
+  INSTRUMENTS_HOME,
+  CREW_HOME,
+  VOYAGES_HOME,
   HISTORY,
   FAQS,
-  LOGS,
+  LOGS_HOME,
+  BEARINGS,
+  PRESS,
 } from "@/lib/ghxstship";
 
 export const dynamic = "force-static";
@@ -62,8 +65,7 @@ export default function Home() {
             <span className="now">Now Departing</span>
             <span className="ticker">
               <span>
-                Miami · New York · Chicago · Los Angeles · On time · Gate{" "}
-                <span id="gate">G26</span> · Boarding all rows
+                Miami · New York · Chicago · Los Angeles · On time · Gate <span id="gate">G26</span> · Boarding all rows
               </span>
             </span>
           </p>
@@ -80,15 +82,12 @@ export default function Home() {
                 <span className="pop">S</span>cene
               </h1>
               <p className="sub">
-                GHXSTSHIP is a full-service experiential production, operations, and technology
-                company headquartered in Miami. We produce festivals, concerts & tours, brand
-                activations, immersive experiences, and beyond — and build the technology that
-                powers them. Pick your destination; we'll chart the course.
+                GHXSTSHIP is a full-service experiential production, operations, and technology company headquartered in Miami. We produce festivals, concerts & tours, brand activations, immersive experiences, and beyond — and build the technology that powers them. Pick your destination; we'll chart the course.
               </p>
               <div className="hero-cta">
-                <a className="gx-btn" href="#book">
+                <Link className="gx-btn" href="/contact">
                   Book Your Voyage
-                </a>
+                </Link>
                 <a className="gx-btn gx-btn--ghost" href="#destinations">
                   Explore Destinations ↗
                 </a>
@@ -115,7 +114,9 @@ export default function Home() {
           <p className="trust-lbl">Trusted by the brands behind the moments</p>
           <div className="trust-logos">
             {TRUSTED.map((b) => (
-              <span key={b}>{b}</span>
+              <Link key={b.label} href={b.href}>
+                <span>{b.label}</span>
+              </Link>
             ))}
           </div>
         </div>
@@ -153,22 +154,16 @@ export default function Home() {
             Where To?
           </h2>
           <p className="answer">
-            Start with where you're headed. Each destination is a kind of experience we produce —
-            pick yours, and we'll chart the course. Your destination is the unforgettable; getting
-            you there is the voyage.
+            Start with where you're headed. Each destination is a kind of experience we produce — pick yours, and we'll chart the course. Your destination is the unforgettable; getting you there is the voyage.
           </p>
           <div className="dest-grid">
-            {DESTINATIONS.map((d) => (
-              <a
-                key={d.code}
-                className={`dcard${d.final ? " is-final" : ""}`}
-                href={d.href}
-              >
+            {DESTINATION_CARDS.map((d) => (
+              <Link key={d.code} className={`dcard${d.final ? " is-final" : ""}`} href={d.href}>
                 <span className="code">{d.code}</span>
                 <i className={`ph-bold ${d.icon} ic`} aria-hidden="true" />
                 <h3>{d.name}</h3>
                 <p>{d.blurb}</p>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -182,22 +177,18 @@ export default function Home() {
             Charter Your Way.
           </h2>
           <p className="answer">
-            Sail with us as far as you like — charter the full voyage end to end, take a single
-            vertical, or pick exactly the services you need.
+            Sail with us as far as you like — charter the full voyage end to end, take a single vertical, or pick exactly the services you need.
           </p>
           <div className="vgrid">
-            {CHARTERS.map((c, i) => (
-              <article className="vcard" key={c.title}>
-                <span
-                  className="gateid"
-                  style={c.accent === "nebula" ? { color: "var(--nebula)" } : undefined}
-                >
+            {CHARTERS_HOME.map((c, i) => (
+              <Link className="vcard" href={c.href} key={c.title} style={{ textDecoration: "none", color: "inherit" }}>
+                <span className="gateid" style={c.accent === "nebula" ? { color: "var(--nebula)" } : undefined}>
                   {i === 0 ? "● Local Service" : "◆ Express"}
                 </span>
                 <h3>{c.title}</h3>
                 <span className="tag">{c.tag}</span>
                 <p>{c.blurb}</p>
-              </article>
+              </Link>
             ))}
           </div>
         </div>
@@ -211,25 +202,27 @@ export default function Home() {
             Your Itinerary.
           </h2>
           <p className="answer">
-            Every GHXSTSHIP voyage follows the same proven course — our eight-phase production
-            lifecycle, from first consultation to final celebration. Here's every leg of the journey
-            you'll take with us.
+            Every GHXSTSHIP voyage follows the same proven course — our eight-phase production lifecycle, from first consultation to final celebration. Here's every leg of the journey you'll take with us.
           </p>
           <div className="fp-wrap">
             <div className="smap">
               <div className="smap__line">
                 {ITINERARY.map((p) => (
-                  <div key={p.n} className={`smap__stop${p.term ? " term" : ""}`}>
+                  <Link
+                    key={p.n}
+                    href={`/itinerary/${p.slug}`}
+                    className={`smap__stop${p.term ? " term" : ""}`}
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
                     <div className="smap__dot">{p.n}</div>
                     <div className="smap__name">{p.name}</div>
                     <div className="smap__sub">{p.sub}</div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>
             <p className="itin-note">
-              The GHXSTSHIP Line — every voyage runs all eight stops, Discovery to Strike. One crew,
-              one charted course.
+              The GHXSTSHIP Line — every voyage runs all eight stops, Discovery to Strike. One crew, one charted course.
             </p>
           </div>
         </div>
@@ -243,8 +236,7 @@ export default function Home() {
             The Difference.
           </h2>
           <p className="answer">
-            Most experiential and brand-activation agencies stop at creative and hand you to a chain
-            of vendors. GHXSTSHIP owns the entire voyage — and builds the technology that powers it.
+            Most experiential and brand-activation agencies stop at creative and hand you to a chain of vendors. GHXSTSHIP owns the entire voyage — and builds the technology that powers it.
           </p>
           <div className="vgrid">
             {DIFFERENCE.map((d) => (
@@ -267,17 +259,16 @@ export default function Home() {
             The Bridge.
           </h2>
           <p className="answer">
-            The bridge is where every voyage is steered — our proprietary software, built in-house.
-            Three instruments, one connected system that powers experiential production at scale.
+            The bridge is where every voyage is steered — our proprietary software, built in-house. Three instruments, one connected system that powers experiential production at scale.
           </p>
           <div className="vgrid">
-            {INSTRUMENTS.map((i) => (
-              <article className="vcard" key={i.title}>
+            {INSTRUMENTS_HOME.map((i) => (
+              <Link className="vcard" href={i.href} key={i.title} style={{ textDecoration: "none", color: "inherit" }}>
                 <span className="gateid">{i.id}</span>
                 <h3>{i.title}</h3>
                 <span className="tag">{i.tag}</span>
                 <p>{i.blurb}</p>
-              </article>
+              </Link>
             ))}
           </div>
         </div>
@@ -291,21 +282,13 @@ export default function Home() {
             The Skeleton Crew.
           </h2>
           <p className="answer">
-            Every voyage is manned by the Skeleton Crew — a senior team of producers, directors,
-            and technicians who stay with you from consultation to celebration. Small by design,
-            legendary by reputation.
+            Every voyage is manned by the Skeleton Crew — a senior team of producers, directors, and technicians who stay with you from consultation to celebration. Small by design, legendary by reputation.
           </p>
           <div className="crew-grid">
-            {CREW.map((c) => (
+            {CREW_HOME.map((c) => (
               <article className="ccard" key={c.title}>
                 <div className="av">
-                  <Image
-                    src="/assets/skull-bone.svg"
-                    alt=""
-                    width={40}
-                    height={40}
-                    style={{ imageRendering: "pixelated" }}
-                  />
+                  <Image src="/assets/skull-bone.svg" alt="" width={40} height={40} style={{ imageRendering: "pixelated" }} />
                 </div>
                 <div>
                   <div className="rank">{c.rank}</div>
@@ -314,23 +297,22 @@ export default function Home() {
                 </div>
               </article>
             ))}
-            <a className="ccard join" href="#crew">
+            <Link className="ccard join" href="/crew/join">
               <div className="av">
-                <Image
-                  src="/assets/logo-ghostship-skull.svg"
-                  alt=""
-                  width={40}
-                  height={40}
-                  style={{ imageRendering: "pixelated" }}
-                />
+                <Image src="/assets/logo-ghostship-skull.svg" alt="" width={40} height={40} style={{ imageRendering: "pixelated" }} />
               </div>
               <div>
                 <div className="rank">Now Boarding</div>
                 <h3>Join the Crew</h3>
                 <p>Training the next generation of experiential producers. Learn the ropes ↗</p>
               </div>
-            </a>
+            </Link>
           </div>
+          <p className="lede" style={{ marginTop: 28, textAlign: "center" }}>
+            <Link className="gx-link" href="/crew">
+              Meet the full Skeleton Crew →
+            </Link>
+          </p>
         </div>
       </section>
 
@@ -345,8 +327,7 @@ export default function Home() {
               </h2>
             </div>
             <p className="lede" style={{ maxWidth: 420 }}>
-              Before you book, browse the archives — a selection of voyages we've charted. Every one
-              a destination reached.
+              Before you book, browse the archives — a selection of voyages we've charted. Every one a destination reached.
             </p>
           </div>
           <div className="gx-fids">
@@ -365,8 +346,13 @@ export default function Home() {
               <span>Year</span>
               <span>Status</span>
             </div>
-            {VOYAGES.map((v) => (
-              <div className="gx-fids__row" key={v.code}>
+            {VOYAGES_HOME.map((v) => (
+              <Link
+                className="gx-fids__row"
+                key={v.code}
+                href={v.href}
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
                 <span className="gx-flap" data-flap>
                   {v.code}
                 </span>
@@ -376,21 +362,53 @@ export default function Home() {
                 </div>
                 <span className="gx-fids__meta">{v.year}</span>
                 <span className={`gx-status gx-status--${v.status}`}>{v.statusLabel}</span>
-              </div>
+              </Link>
+            ))}
+          </div>
+          <p className="lede" style={{ marginTop: 24, textAlign: "right" }}>
+            <Link className="gx-link" href="/voyages">
+              Open the full Archives →
+            </Link>
+          </p>
+        </div>
+      </section>
+
+      {/* COMPASS BEARINGS — testimonials */}
+      <section className="pad alt" aria-labelledby="bearings-h">
+        <div className="wrap">
+          <p className="eyebrow">Compass Bearings · Voices Aboard</p>
+          <h2 className="sec" id="bearings-h">
+            What They Say.
+          </h2>
+          <p className="lede">Selected quotes from clients, partners, and crew across the voyages.</p>
+          <div className="vgrid" style={{ marginTop: 30 }}>
+            {BEARINGS.map((b, i) => (
+              <article className="bearing" key={i}>
+                <p className="q">"{b.quote}"</p>
+                <p className="meta">
+                  <b>{b.person}</b> · {b.role} · {b.org}
+                </p>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
       {/* HISTORY */}
-      <section className="pad alt" aria-label="Company history">
+      <section className="pad" aria-label="Company history">
         <div className="wrap">
           <div className="hist-inner">
             {HISTORY.map((s) => (
               <div className="stat" key={s.lbl}>
                 <div className="big">{s.big}</div>
                 <div className="lbl">{s.lbl}</div>
+                <span className="cap-note">{s.caveat}</span>
               </div>
+            ))}
+          </div>
+          <div className="press-strip" aria-label="Press coverage">
+            {PRESS.map((p) => (
+              <span key={p}>{p}</span>
             ))}
           </div>
         </div>
@@ -428,15 +446,20 @@ export default function Home() {
           </h2>
           <p className="lede">Field notes, press, and crew calls from the voyage.</p>
           <div className="log-list">
-            {LOGS.map((l) => (
-              <a className="log" href="#" key={l.title}>
+            {LOGS_HOME.map((l) => (
+              <Link className="log" href={`/logs/${l.slug}`} key={l.slug}>
                 <span className="log__date">{l.date}</span>
                 <span className="log__cat">{l.cat}</span>
                 <span className="log__t">{l.title}</span>
                 <span className="log__go">↗</span>
-              </a>
+              </Link>
             ))}
           </div>
+          <p className="lede" style={{ marginTop: 24, textAlign: "right" }}>
+            <Link className="gx-link" href="/logs">
+              All dispatches →
+            </Link>
+          </p>
         </div>
       </section>
 
@@ -452,16 +475,15 @@ export default function Home() {
             Project.
           </h2>
           <p className="sub gx-body-l">
-            Destination chosen, course charted, crew assembled. All that's left is to come aboard —
-            consultation to celebration, one crew, zero compromises.
+            Destination chosen, course charted, crew assembled. All that's left is to come aboard — consultation to celebration, one crew, zero compromises.
           </p>
           <div className="hero-cta" style={{ justifyContent: "center" }}>
-            <a className="gx-btn gx-btn--lg" href={`mailto:${ORG.email}`}>
+            <Link className="gx-btn gx-btn--lg" href="/contact">
               Book Your Voyage
-            </a>
-            <a className="gx-btn gx-btn--ghost gx-btn--lg" href="#voyages">
+            </Link>
+            <Link className="gx-btn gx-btn--ghost gx-btn--lg" href="/voyages">
               Browse the Archives
-            </a>
+            </Link>
           </div>
         </div>
       </section>
