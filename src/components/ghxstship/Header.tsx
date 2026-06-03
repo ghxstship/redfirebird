@@ -1,180 +1,48 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
-import { Menu, X, ChevronDown } from "lucide-react";
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-} from "@/components/ui/DropdownMenu";
-import { Button } from "@/components/ui/Button";
+import Image from "next/image";
+import { PRIMARY_NAV } from "@/lib/ghxstship";
 
-type NavLink = { label: string; href: string; description?: string };
-type NavGroup = { label: string; items: NavLink[] };
-
-/**
- * Services dropdown — ordered by XTC class code (0000 → 9000), the same
- * append-only sequence used in the catalog data layer and the footer.
- * Class codes appear in the label so the menu reads like the codebook.
- */
-const SERVICES: NavGroup = {
-  label: "Services",
-  items: [
-    { label: "Full Catalog", href: "/services", description: "All 114 services" },
-    { label: "0000 Executive", href: "/services/executive", description: "Permits, insurance, compliance" },
-    { label: "1000 Creative", href: "/services/creative", description: "Design, art direction, IP" },
-    { label: "2000 Talent", href: "/services/talent", description: "Performers, programming" },
-    { label: "3000 Marketing", href: "/services/marketing", description: "Ambassadors, donor programs" },
-    { label: "4000 Build", href: "/services/build", description: "Scenic, fabrication, install" },
-    { label: "5000 Production", href: "/services/production", description: "Audio, lighting, video, staging" },
-    { label: "6000 Operations", href: "/services/operations", description: "Crew, logistics, security" },
-    { label: "7000 Experience", href: "/services/experience", description: "Guest experience, retail" },
-    { label: "8000 Hospitality", href: "/services/hospitality", description: "F&B, VIP, premium service" },
-    { label: "9000 Technology", href: "/services/technology", description: "Networks, RFID, AR / VR" },
-  ],
-};
-
-const INDUSTRIES: NavGroup = {
-  label: "Industries",
-  items: [
-    { label: "All Industries", href: "/solutions", description: "All 19 verticals" },
-    { label: "Concerts, Festivals & Tours", href: "/solutions/concerts-festivals-tours" },
-    { label: "Immersive Experiences", href: "/solutions/immersive-experiences" },
-    { label: "Brand Activations & Pop-ups", href: "/solutions/brand-activations-popups" },
-    { label: "Theme Parks & Attractions", href: "/solutions/amusement-theme-parks" },
-    { label: "Cruise Lines & Maritime", href: "/solutions/cruise-lines-maritime" },
-    { label: "Premium Sporting & Fan Zones", href: "/solutions/premium-sporting-experiences-fan-zones" },
-    { label: "Premium Hospitality", href: "/solutions/premium-experiences-hospitality" },
-    { label: "Theatrical Performances", href: "/solutions/theatrical-performances" },
-  ],
-};
-
-const WORK: NavGroup = {
-  label: "Work",
-  items: [
-    { label: "Issues", href: "/issues", description: "Numbered case studies" },
-    { label: "Sagas", href: "/issues", description: "Multi-year arcs" },
-    { label: "Markets", href: "/markets", description: "12 cities, 4 anchors" },
-  ],
-};
-
-const STUDIO: NavGroup = {
-  label: "Studio",
-  items: [
-    { label: "Production Lifecycle", href: "/production-lifecycle", description: "Discovery to Wrap" },
-    { label: "Experience Mediums", href: "/experience-mediums", description: "How audiences feel it" },
-    { label: "Brand Book", href: "/brand", description: "Live tokens, no PDF" },
-    { label: "About", href: "/about" },
-    { label: "Contact", href: "/contact" },
-  ],
-};
-
-const ALL_GROUPS = [SERVICES, INDUSTRIES, WORK, STUDIO];
-
-function DesktopGroup({ group }: { group: NavGroup }) {
-  return (
-    <DropdownMenu>
-      <DropdownMenuTrigger className="flex items-center gap-1 rounded px-3 py-2 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)]">
-        {group.label}
-        <ChevronDown className="h-3.5 w-3.5" aria-hidden />
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="start" sideOffset={8} className="min-w-[280px]">
-        <DropdownMenuLabel>{group.label}</DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        {group.items.map((item) => (
-          <DropdownMenuItem key={item.href} asChild>
-            <Link href={item.href} className="block w-full">
-              <div className="text-sm font-medium">{item.label}</div>
-              {item.description && <div className="mt-0.5 text-xs text-[var(--text-muted)]">{item.description}</div>}
-            </Link>
-          </DropdownMenuItem>
-        ))}
-      </DropdownMenuContent>
-    </DropdownMenu>
-  );
-}
-
-export function GhxstshipHeader() {
+export function Header() {
   const [open, setOpen] = useState(false);
-
   return (
-    <header className="sticky top-0 z-40 border-b border-[var(--border-color)] bg-[var(--bg)]/95 backdrop-blur supports-[backdrop-filter]:bg-[var(--bg)]/85">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-3">
-        <Link
-          href="/"
-          className="flex items-center gap-2 text-sm font-semibold tracking-[0.18em] uppercase"
-          aria-label="GHXSTSHIP Industries — home"
-        >
-          <span aria-hidden className="inline-block h-2.5 w-2.5" style={{ background: "var(--org-accent)" }} />
-          G H X S T S H I P
-        </Link>
-        <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
-          {ALL_GROUPS.map((g) => (
-            <DesktopGroup key={g.label} group={g} />
-          ))}
-          <Link
-            href="/pricing"
-            className="rounded px-3 py-2 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
-          >
-            Pricing
-          </Link>
-        </nav>
-        <div className="hidden items-center gap-2 md:flex">
-          <Button href="/contact" variant="secondary" size="sm">
-            Contact
-          </Button>
-          <Button href="/contact" size="sm">
-            Hail The Studio
-          </Button>
-        </div>
+    <header className="nav">
+      <div className="wrap nav-inner">
+        <a className="brand" href="#" aria-label="GHXSTSHIP home">
+          <Image
+            src="/assets/skull-bone.svg"
+            alt="GHXSTSHIP ghost-ship logo"
+            width={34}
+            height={34}
+            priority
+          />
+          <b>G H X S T S H I P</b>
+        </a>
         <button
-          type="button"
-          className="md:hidden"
-          aria-label={open ? "Close menu" : "Open menu"}
+          className="navtoggle"
+          aria-label="Menu"
           aria-expanded={open}
-          onClick={() => setOpen((prev) => !prev)}
+          onClick={() => setOpen((v) => !v)}
         >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          <i className="ph-bold ph-list" aria-hidden="true" />
         </button>
+        <nav className={`navlinks${open ? " open" : ""}`} aria-label="Primary">
+          {PRIMARY_NAV.map((item) => (
+            <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
+              {item.label}
+            </a>
+          ))}
+          <a
+            className="gx-btn gx-btn--nebula gx-btn--sm"
+            href="#book"
+            style={{ color: "var(--bone)" }}
+            onClick={() => setOpen(false)}
+          >
+            Book Now ↗
+          </a>
+        </nav>
       </div>
-      {open && (
-        <div className="border-t border-[var(--border-color)] bg-[var(--bg)] md:hidden">
-          <div className="mx-auto max-w-6xl space-y-6 px-6 py-6">
-            {ALL_GROUPS.map((g) => (
-              <div key={g.label}>
-                <div className="text-[11px] font-semibold tracking-[0.2em] text-[var(--text-muted)] uppercase">
-                  {g.label}
-                </div>
-                <ul className="mt-3 space-y-2">
-                  {g.items.map((item) => (
-                    <li key={item.href}>
-                      <Link
-                        href={item.href}
-                        onClick={() => setOpen(false)}
-                        className="block text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
-                      >
-                        {item.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-            <div className="flex flex-wrap items-center gap-2 pt-2">
-              <Button href="/pricing" variant="secondary" size="sm">
-                Pricing
-              </Button>
-              <Button href="/contact" size="sm">
-                Hail The Studio
-              </Button>
-            </div>
-          </div>
-        </div>
-      )}
     </header>
   );
 }

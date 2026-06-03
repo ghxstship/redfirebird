@@ -1,117 +1,119 @@
-/**
- * Structured-data emitters for the GHXSTSHIP marketing surface.
- * Server-side JSON-LD blocks per page — Organization, Service, OfferCatalog,
- * BreadcrumbList, FAQPage. Engineered for both SEO crawlers and generative
- * engines (ChatGPT, Claude, Perplexity, Gemini, Google AI Overviews).
- */
+import { ORG, DESTINATIONS, ITINERARY, INSTRUMENTS, VOYAGES, FAQS } from "@/lib/ghxstship";
 
-const BASE = "https://ghxstship.pro";
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: ORG.name,
+  alternateName: ORG.spaced,
+  legalName: ORG.legal,
+  url: ORG.url,
+  logo: `${ORG.url}logo.svg`,
+  description:
+    "GHXSTSHIP is a full-service experiential production, operations, and technology company headquartered in Miami, with offices in New York, Chicago, and Los Angeles. We produce festivals, concerts and tours, brand activations, immersive experiences, and sporting events for brands, producers, creative directors, and production directors — through three verticals: Production, Operations, and Technology.",
+  audience: {
+    "@type": "Audience",
+    audienceType:
+      "Brands, producers, creative directors, production directors, and project managers in live entertainment, experiential marketing, and arts and culture",
+  },
+  email: ORG.email,
+  foundingDate: ORG.foundingDate,
+  slogan: ORG.slogan,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Miami",
+    addressRegion: "FL",
+    addressCountry: "US",
+  },
+  location: [
+    { "@type": "Place", name: "GHXSTSHIP Miami (Headquarters)", address: { "@type": "PostalAddress", addressLocality: "Miami", addressRegion: "FL", addressCountry: "US" } },
+    { "@type": "Place", name: "GHXSTSHIP New York", address: { "@type": "PostalAddress", addressLocality: "New York", addressRegion: "NY", addressCountry: "US" } },
+    { "@type": "Place", name: "GHXSTSHIP Chicago", address: { "@type": "PostalAddress", addressLocality: "Chicago", addressRegion: "IL", addressCountry: "US" } },
+    { "@type": "Place", name: "GHXSTSHIP Los Angeles", address: { "@type": "PostalAddress", addressLocality: "Los Angeles", addressRegion: "CA", addressCountry: "US" } },
+  ],
+  areaServed: "Worldwide",
+  knowsAbout: [
+    "Festival production",
+    "Concert and tour production",
+    "Brand activations",
+    "Immersive experience design",
+    "Sporting event production",
+    "Broadcast and film production",
+    "Health and wellness experiences",
+    "Premium hospitality",
+    "Luxury retail activations",
+    "Water and motorsports production",
+    "Event production management",
+    "Crew management",
+    "Event ticketing",
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "GHXSTSHIP Destinations",
+    itemListElement: DESTINATIONS.filter((d) => !d.final).map((d) => ({
+      "@type": "Offer",
+      itemOffered: { "@type": "Service", name: d.name },
+    })),
+  },
+};
 
-function jsonLd(data: object): string {
-  return JSON.stringify(data).replace(/</g, "\\u003c");
-}
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "The GHXSTSHIP Production Lifecycle",
+  description:
+    "GHXSTSHIP's eight-phase methodology for delivering live experiences, from discovery to strike.",
+  step: ITINERARY.map((phase, i) => ({
+    "@type": "HowToStep",
+    position: i + 1,
+    name: phase.name,
+    text: phase.sub,
+  })),
+};
 
-export function GhxstshipJsonLd({ data }: { data: object | object[] }) {
-  const arr = Array.isArray(data) ? data : [data];
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@graph": INSTRUMENTS.map((inst) => ({
+    "@type": "SoftwareApplication",
+    name: inst.title,
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    description: inst.blurb,
+    publisher: { "@type": "Organization", name: "GHXSTSHIP" },
+  })),
+};
+
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "GHXSTSHIP Selected Work",
+  itemListElement: VOYAGES.map((v, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    item: { "@type": "CreativeWork", name: v.name, about: v.meta, datePublished: v.year },
+  })),
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
+export function JsonLd() {
+  const blocks = [organizationSchema, howToSchema, softwareSchema, itemListSchema, faqSchema];
   return (
     <>
-      {arr.map((d, i) => (
-        // eslint-disable-next-line react/no-danger
-        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(d) }} />
+      {blocks.map((b, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(b) }}
+        />
       ))}
     </>
   );
-}
-
-export function organizationSchema() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "GHXSTSHIP Industries",
-    url: BASE,
-    description:
-      "GHXSTSHIP is an experiential production company building festivals, immersive experiences, theme parks, theatrical performances, brand activations, and premium hospitality at scale.",
-    sameAs: ["https://lytehaus.tech"],
-    areaServed: [
-      "Miami",
-      "New York City",
-      "Chicago",
-      "Los Angeles",
-      "Orlando",
-      "Nashville",
-      "Austin",
-      "Atlanta",
-      "Minneapolis",
-      "Denver",
-      "Las Vegas",
-      "Seattle",
-      "United States",
-    ],
-  };
-}
-
-export function breadcrumbSchema(items: Array<{ label: string; href: string }>) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: items.map((item, i) => ({
-      "@type": "ListItem",
-      position: i + 1,
-      name: item.label,
-      item: `${BASE}${item.href}`,
-    })),
-  };
-}
-
-export function serviceSchema(opts: {
-  name: string;
-  description: string;
-  serviceType?: string;
-  identifier?: string;
-  areaServed?: string[];
-  category?: string;
-  offers?: Array<{ name: string; identifier?: string }>;
-}) {
-  const data: Record<string, unknown> = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: opts.name,
-    description: opts.description,
-    provider: {
-      "@type": "Organization",
-      name: "GHXSTSHIP Industries",
-      url: BASE,
-    },
-  };
-  if (opts.serviceType) data.serviceType = opts.serviceType;
-  if (opts.identifier) data.identifier = opts.identifier;
-  if (opts.category) data.category = opts.category;
-  if (opts.areaServed?.length) data.areaServed = opts.areaServed;
-  if (opts.offers?.length) {
-    data.hasOfferCatalog = {
-      "@type": "OfferCatalog",
-      name: `${opts.name} Catalog`,
-      itemListElement: opts.offers.map((o) => ({
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: o.name,
-          ...(o.identifier ? { identifier: o.identifier } : {}),
-        },
-      })),
-    };
-  }
-  return data;
-}
-
-export function faqSchema(faqs: Array<{ q: string; a: string }>) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((f) => ({
-      "@type": "Question",
-      name: f.q,
-      acceptedAnswer: { "@type": "Answer", text: f.a },
-    })),
-  };
 }

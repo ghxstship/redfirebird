@@ -1,93 +1,97 @@
 import type { Metadata, Viewport } from "next";
-import { Anton, Bebas_Neue, DM_Sans, Share_Tech_Mono } from "next/font/google";
-import { GhxstshipHeader } from "@/components/ghxstship/Header";
-import { GhxstshipFooter } from "@/components/ghxstship/Footer";
+import { Big_Shoulders, Space_Grotesk, Space_Mono, Silkscreen } from "next/font/google";
+import { Header } from "@/components/ghxstship/Header";
+import { Footer } from "@/components/ghxstship/Footer";
+import { JsonLd } from "@/components/ghxstship/JsonLd";
+import { ClientEnhancements } from "@/components/ghxstship/ClientEnhancements";
+import { ORG } from "@/lib/ghxstship";
 import "./globals.css";
-import "./theme/index.css";
 
-const anton = Anton({ subsets: ["latin"], weight: "400", variable: "--font-anton", display: "swap" });
-const bebasNeue = Bebas_Neue({ subsets: ["latin"], weight: "400", variable: "--font-bebas-neue", display: "swap" });
-const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-dm-sans", display: "swap" });
-const shareTechMono = Share_Tech_Mono({
+const display = Big_Shoulders({
   subsets: ["latin"],
-  weight: "400",
-  variable: "--font-share-tech-mono",
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-display",
+  display: "swap",
+});
+const body = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-body",
+  display: "swap",
+});
+const mono = Space_Mono({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-mono",
+  display: "swap",
+});
+const pixel = Silkscreen({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-pixel",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://ghxstship.pro"),
+  metadataBase: new URL(ORG.url),
   title: {
-    default: "GHXSTSHIP — Experiential Production Company",
+    default: "GHXSTSHIP — Experiential Production, Operations & Technology",
     template: "%s — GHXSTSHIP",
   },
   description:
-    "GHXSTSHIP is an experiential production company building festivals, immersive experiences, theme parks, theatrical performances, brand activations, and premium hospitality across Miami, New York City, Chicago, and Los Angeles.",
-  keywords: [
-    "experiential production company",
-    "festival production company",
-    "theme park production",
-    "live event production",
-    "immersive experience design",
-    "brand activation agency",
-    "theatrical production company",
-    "premium hospitality production",
-  ],
+    "GHXSTSHIP is a Miami experiential production & technology company (NY, Chicago, LA) for brands, producers, and creative & production directors. We produce festivals, concerts & tours, brand activations, immersive experiences, and sporting events.",
+  authors: [{ name: ORG.legal }],
   openGraph: {
-    title: "GHXSTSHIP — Experiential Production Company",
+    title: "GHXSTSHIP — Experiential Production, Operations & Technology",
     description:
-      "Festivals, theme park attractions, theatrical productions, brand activations, and premium hospitality. 114 services, 19 industries, 12 markets.",
+      "Venture Beyond. Book your voyage: festivals, tours, activations, immersive & sporting events through an 8-phase production lifecycle.",
     siteName: "GHXSTSHIP",
+    url: ORG.url,
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "GHXSTSHIP — Experiential Production Company",
-    description: "Festivals. Theme parks. Theatre. Built once, run anywhere.",
+    title: "GHXSTSHIP — Experiential Production, Operations & Technology",
+    description: "Book your voyage. Festivals · Tours · Activations · Immersive · Sporting Events.",
   },
   robots: { index: true, follow: true },
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f5f2ec" },
-    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
-  ],
+  themeColor: "#060815",
   width: "device-width",
   initialScale: 1,
 };
 
-/**
- * Root layout. The marketing surface is theme-locked to bermuda-triangle in
- * always-light mode — paper #f5f2ec, ink #0a0a0a, Anton display, brutal
- * shadows — with the GHXSTSHIP green accent applied via data-platform.
- */
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="en"
-      data-theme="bermuda-triangle"
-      data-mode="light"
-      className={`h-full ${anton.variable} ${bebasNeue.variable} ${dmSans.variable} ${shareTechMono.variable}`}
+      className={`${display.variable} ${body.variable} ${mono.variable} ${pixel.variable}`}
       suppressHydrationWarning
     >
-      <body className="flex min-h-full flex-col antialiased">
-        <a href="#main" className="skip-link">
-          Skip to content
+      <head>
+        <link rel="preconnect" href="https://unpkg.com" crossOrigin="" />
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css"
+        />
+        <JsonLd />
+      </head>
+      <body>
+        <a className="skip" href="#main">
+          Skip to main content
         </a>
-        <div
-          data-theme="bermuda-triangle"
-          data-platform="ghxstship"
-          data-mode="light"
-          className="flex min-h-screen flex-col"
-          style={{ background: "var(--bg)", color: "var(--text)", fontFamily: "var(--font-body)" }}
-        >
-          <GhxstshipHeader />
-          <main id="main" className="flex-1">
-            {children}
-          </main>
-          <GhxstshipFooter />
-        </div>
+        <Header />
+        <main id="main">{children}</main>
+        <Footer />
+        <ClientEnhancements />
       </body>
     </html>
   );

@@ -1,88 +1,106 @@
-import Link from "next/link";
-import { CLASSES } from "@/lib/ghxstship/classes";
-import { SOLUTIONS } from "@/lib/ghxstship/solutions";
-import { ANCHOR_MARKETS } from "@/lib/ghxstship/markets";
-import { paths } from "@/lib/ghxstship";
+import Image from "next/image";
+import { ORG, FOOTER_NAV } from "@/lib/ghxstship";
 
-const COLUMNS: Array<{ heading: string; items: Array<{ label: string; href: string }> }> = [
-  {
-    heading: "Services",
-    items: CLASSES.map((c) => ({ label: c.shortName, href: paths.classDetail(c.slug) })),
-  },
-  {
-    heading: "Top Industries",
-    items: SOLUTIONS.slice(0, 9).map((s) => ({ label: s.name, href: paths.solutionDetail(s.slug) })),
-  },
-  {
-    heading: "Anchor Markets",
-    items: [
-      ...ANCHOR_MARKETS.map((m) => ({ label: m.name, href: paths.marketDetail(m.slug) })),
-      { label: "All Markets", href: paths.marketsRoot() },
-    ],
-  },
-  {
-    heading: "Studio",
-    items: [
-      { label: "About", href: paths.about() },
-      { label: "Pricing", href: paths.pricing() },
-      { label: "Production Lifecycle", href: paths.phasesRoot() },
-      { label: "Experience Mediums", href: paths.tiersRoot() },
-      { label: "Contact", href: paths.contact() },
-    ],
-  },
-];
-
-export function GhxstshipFooter() {
+export function Footer() {
   return (
-    <footer className="mt-24 border-t border-[var(--border-color)] bg-[var(--bg-secondary)]">
-      <div className="mx-auto max-w-6xl px-6 py-16">
-        <div className="grid gap-10 md:grid-cols-5">
-          <div className="md:col-span-1">
-            <Link
-              href={paths.root()}
-              className="text-base font-semibold tracking-[0.18em] uppercase"
-              aria-label="GHXSTSHIP Industries — home"
+    <footer>
+      <div className="wrap">
+        <div className="foot-grid">
+          <div className="foot-brand">
+            <a
+              className="brand"
+              href="#"
+              style={{ marginBottom: 14 }}
+              aria-label="GHXSTSHIP home"
             >
-              G H X S T S H I P
-            </Link>
-            <p className="mt-3 text-xs text-[var(--text-muted)]">
-              Experiential production company.
-              <br />
-              Festivals. Theme parks. Theatre.
-              <br />
-              Built once, run anywhere.
+              <Image
+                src="/assets/skull-bone.svg"
+                alt="GHXSTSHIP ghost-ship logo"
+                width={40}
+                height={40}
+                style={{ imageRendering: "pixelated" }}
+              />
+              <b>G H X S T S H I P</b>
+            </a>
+            <p
+              style={{
+                fontFamily: "var(--font-display)",
+                fontWeight: 800,
+                fontSize: 22,
+                textTransform: "uppercase",
+                color: "var(--brass)",
+                margin: 0,
+              }}
+            >
+              {ORG.slogan}.
             </p>
-            <div className="mt-4 flex gap-3 text-xs text-[var(--text-muted)]">
-              <a href="https://lytehaus.tech" className="hover:text-[var(--text-primary)]">
-                LYTEHAUS Technologies →
+            <p
+              style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: 12,
+                color: "var(--fg-on-dark-3)",
+                letterSpacing: "0.08em",
+                marginTop: 10,
+              }}
+            >
+              Miami Headquarters
+              <br />
+              New York &nbsp;·&nbsp; Chicago &nbsp;·&nbsp; Los Angeles
+            </p>
+            <div className="foot-contact" style={{ marginTop: 14 }}>
+              <a href={`mailto:${ORG.email}`}>
+                <i className="ph-bold ph-envelope-simple" style={{ color: "var(--brass)" }} />
+                {ORG.email}
               </a>
             </div>
-          </div>
-          {COLUMNS.map((col) => (
-            <div key={col.heading}>
-              <div className="text-[11px] font-semibold tracking-[0.2em] text-[var(--text-muted)] uppercase">
-                {col.heading}
-              </div>
-              <ul className="mt-4 space-y-2 text-sm">
-                {col.items.map((item) => (
-                  <li key={item.href}>
-                    <Link href={item.href} className="text-[var(--text-secondary)] hover:text-[var(--text-primary)]">
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+            <div className="foot-social">
+              <a href="#" aria-label="Instagram"><i className="ph-bold ph-instagram-logo" /></a>
+              <a href="#" aria-label="LinkedIn"><i className="ph-bold ph-linkedin-logo" /></a>
+              <a href="#" aria-label="YouTube"><i className="ph-bold ph-youtube-logo" /></a>
+              <a href="#" aria-label="TikTok"><i className="ph-bold ph-tiktok-logo" /></a>
             </div>
-          ))}
+          </div>
+          <nav aria-label="Destinations">
+            <h5>Destinations</h5>
+            {FOOTER_NAV.destinations.map((label) => (
+              <a key={label} href="#destinations">
+                {label}
+              </a>
+            ))}
+          </nav>
+          <nav aria-label="Charters">
+            <h5>Charters</h5>
+            {FOOTER_NAV.charters.map((l) => (
+              <a key={l.label} href={l.href}>
+                {l.label}
+              </a>
+            ))}
+          </nav>
+          <nav aria-label="Company">
+            <h5>Company</h5>
+            {FOOTER_NAV.company.map((l) => (
+              <a key={l.label} href={l.href}>
+                {l.label}
+              </a>
+            ))}
+          </nav>
+          <nav aria-label="Get Started">
+            <h5>Get Started</h5>
+            {FOOTER_NAV.getStarted.map((l) => (
+              <a key={l.label} href={l.href}>
+                {l.label}
+              </a>
+            ))}
+          </nav>
         </div>
-        <div className="mt-12 border-t border-[var(--border-color)] pt-6 text-xs text-[var(--text-muted)]">
-          <div className="flex flex-wrap items-center justify-between gap-3">
-            <span>© {new Date().getFullYear()} GHXSTSHIP Industries LLC</span>
-            <span>Miami · New York · Chicago · Los Angeles</span>
-          </div>
-          <div className="mt-3 text-[11px] leading-relaxed">
-            ATLVS, GVTEWAY, and COMPVSS are operating brands of LYTEHAUS Technologies, a GHXSTSHIP Industries company.
-          </div>
+        <div className="foot-bot">
+          <span>© 2026 G H X S T S H I P INDUSTRIES LLC. ALL RIGHTS RESERVED.</span>
+          <span className="foot-legal">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Confidentiality</a>
+            <a className="foot-totop" href="#main">Back to top ↑</a>
+          </span>
         </div>
       </div>
     </footer>
