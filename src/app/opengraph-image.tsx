@@ -66,7 +66,7 @@ export default async function OG() {
           <div style={{ fontSize: 18, letterSpacing: 4, color: "#B9C0E0", textTransform: "uppercase" }}>
             Miami · New York · Chicago · Los Angeles
           </div>
-          <div style={{ fontSize: 18, letterSpacing: 4, color: "#E9A23B" }}>ghxstship.tours</div>
+          <div style={{ fontSize: 18, letterSpacing: 4, color: "#E9A23B" }}>ghxstship.xyz</div>
         </div>
       </div>
     ),

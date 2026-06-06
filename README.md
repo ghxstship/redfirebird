@@ -12,7 +12,7 @@ production directors, across three verticals:
 - **Operations** — _We run the machine._
 - **Technology** — _We build the tools._ (ATLVS · COMPVSS · GVTEWAY)
 
-Live at [ghxstship.tours](https://ghxstship.tours).
+Live at [ghxstship.xyz](https://ghxstship.xyz).
 
 ## Stack
 

@@ -9,7 +9,7 @@ const url = `${ORG.url}terms`;
 
 export const metadata: Metadata = {
   title: "Terms of Use — GHXSTSHIP",
-  description: "GHXSTSHIP terms of use — the working terms that govern your visit to ghxstship.tours.",
+  description: "GHXSTSHIP terms of use — the working terms that govern your visit to ghxstship.xyz.",
   alternates: { canonical: url },
 };
 
@@ -35,7 +35,7 @@ export default function Terms() {
               <span className="pop">of Use.</span>
             </h1>
             <p className="lede">
-              The working terms that govern your visit to ghxstship.tours. Engagement-specific terms — contracts, statements of work, master services agreements — are issued separately during the Charter phase.
+              The working terms that govern your visit to ghxstship.xyz. Engagement-specific terms — contracts, statements of work, master services agreements — are issued separately during the Charter phase.
             </p>
           </div>
         </section>

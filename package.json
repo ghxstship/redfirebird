@@ -2,7 +2,7 @@
   "name": "ghxstship",
   "version": "1.0.0",
   "private": true,
-  "description": "GHXSTSHIP — Venture Beyond. A full-service experiential production, operations, and technology company headquartered in Miami, with offices in New York, Chicago, and Los Angeles. Marketing site at ghxstship.tours.",
+  "description": "GHXSTSHIP — Venture Beyond. A full-service experiential production, operations, and technology company headquartered in Miami, with offices in New York, Chicago, and Los Angeles. Marketing site at ghxstship.xyz.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
